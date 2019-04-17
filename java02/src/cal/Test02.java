@@ -9,5 +9,9 @@ public class Test02 {
 		}else {
 			System.out.println("홀수");
 		}
+		
+		System.out.println("----삼항연산자로 출력");
+		
+		System.out.println(a == 0 ? "짝수" : "홀수");
 	}
 }
