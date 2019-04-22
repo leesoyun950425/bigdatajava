@@ -1,0 +1,7 @@
+쇼핑몰
+1. db생성 : computer
+2. computer db선택
+3. table 생성 : 회원정보 member
+	tabel명, 항목명, 데이타타입
+4. 레코드 3개 insert
+5. 회원 전체 검색
