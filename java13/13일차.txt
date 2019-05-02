@@ -1,0 +1,71 @@
+- DB프로그래밍
+- 프로젝트 DB설계 후, 구현
+- Java와 DB와의 연동
+  (JDBC)
+
+JDBC(자바 DB프로그램)
+Java ---- Connector ---------------- DBMS
+	(Driver)
+	클래스들의 묶음(압축)
+	archive(아카이브, 압축)
+	java archive(jar)
+
+JDBC프로그래밍 순서
+------------------------------
+1. 드라이버 설정
+2. DB연결(DB명, id, pw)
+3. SQL선택
+4. SQL전송
+------------------------------
+5. 검색결과가 있는 처리
+
+
+1. myphone이라는 db에 product테이블(id,title,price,company)
+
+입력받아서 삽입하는 자바 코드 완성
+2. p100 	apple 	100 	appcom
+   p200 	banana 	50 	bacom
+
+응집도 = 잡다한 기능이 들어가지 않고 하나의 기능만 들어간 코드.
+M - 방법
+V - 보여지는것
+C - 컨트롤
+
+DB처리 클래스(부품) : crud
+=> 멤버변수 + 멤버메소드
+
+
+web프로그램, swing프로그램, 콘솔프로그램
+
+
+1. dbms란?
+	db : database(많은 양의 데이터)
+	dbms : database management system.(sw+hw)
+	          db를 관리해주는 시스템
+2. dbms의 종류 2가지 이상 : mySQL , Oracle, MS-SQL Server, mariaDB
+3. dbms를 연결해서 사용하는 프로그램.1개이상 : mySQL client, DBeaver, EatasourceExplorer, Tod
+4. db를 다루기 위한 언어는? SQL 
+5. sql문을 기능적으로 3가지 분류 : DataDefinitionLanguage, DataManipulationLanguage, DataControlLanguage
+6. 5번에 해당하는 분류에 해당하는 sql문 예를 한개 이상
+	DDL : create database test
+	DML : insert into ~
+	DCL : create user, backup
+7. dml에 해당하는 sql문을 처리 내용에 따라 4가지로 분류.
+	CRUD
+8. 7번을 자세히 설명.
+	Create : insert
+	Read : select
+	Update : update
+	Delete : delete
+9. port란?
+	하나의 ip로 운영하는 서버가 여러대인 경우 서버를 구분하기 위한 용도로 부가적으로 부여한 번호.
+10. 클래스를 만들때는 하나의 클래스에는 하나의 기능만 집중해서 만들어져야 합니다. 이것을 나타내는 말 : 응집도
+
+
+DB처리 클래스
+CRUD중에서, C만!
+U, D를 완성해서 DB입력2에서 아용!
+update id = win을 찾아서 tel = 999변경
+delete id = win을 찾아서 삭제
+-------------------------------------------------------
+본인 프로젝트에서 사용하는 테이블의 crud처리 클래스를 만드세요!
