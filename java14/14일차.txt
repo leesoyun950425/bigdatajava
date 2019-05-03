@@ -1,0 +1,27 @@
+각 프로젝트 메뉴에서 사용할 테이블에 대한 CRUD완성하여 테스트
+MemberDAO.java
+MemberMain.java
+Data Access Object(DAO) - CRUD만 들어간 클래스
+- 테이블당 하나
+Data Transfer Object(DTO) - 데이터 전달용 클래스
+
+레코드 하나당 DTO한개 
+이것을 ORM이라고 한다. 
+
+DB를 연결하는 테이블을 RDB
+
+1.DTO의 필요성
+ - 
+2.DTO를 만드는 방법
+ - setter getter 메소드 생성
+3.DTO를 사용하면 좋은점
+ - 매번 생성 안해도 되고 주소값만 복사하면 값이 들어옴?
+4.DTO는 table의 무엇과 mapping?
+ - RDB
+5.DTO는 무엇의 약자인가요?
+ - Data Transfer Object
+6.ORM(Object-RDB의 mapping)
+
+1. 각 메뉴의 테이블 당 
+	DAO+DTO
+2. DTO를 만들어서, insert만 수정
