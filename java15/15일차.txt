@@ -1,0 +1,21 @@
+DB처리위한 class
+----------------------
+DAO(Data Access Object)
+- CRUD 처리 구현
+- CUD(insert,update,delete) : void형 처리, execupteUpdate()
+- R(select) : return(Result Set)형 처리, executeQuery()의 결과는 rs
+
+DTO(Data Tranfer Object)
+- 전송할 데이타를 묶는 용도
+
+
+AWT--> Swing--> JavaFx
+1차 프로젝트
+------------------
+사용자가 프로그램을 접하는 부분
+User Interface(UI)
+GUI(Swing)--- Java처리--- DBMS
+		  DAO,DTO
+
+GUI(브라우저)--- 웹서버--- Java처리--- DBMS
+			  DAO,DTO
