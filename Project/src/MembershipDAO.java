@@ -21,14 +21,14 @@ public class MembershipDAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "insert into membership values(?,?,?,?,?,?)";
+			String sql = "insert into membership values(null,?,?,?,?,?)";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, dto.getNum());
-			ps.setString(2, dto.getId());
-			ps.setString(3, dto.getPw());
-			ps.setString(4, dto.getName());
-			ps.setString(5, dto.getTel());
-			ps.setString(6, dto.getAddr());
+//			ps.setInt(1, dto.getNum());
+			ps.setString(1, dto.getId());
+			ps.setString(2, dto.getPw());
+			ps.setString(3, dto.getName());
+			ps.setString(4, dto.getTel());
+			ps.setString(5, dto.getAddr());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -47,18 +47,16 @@ public class MembershipDAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "select * from membership where num=?";
+			String sql = "select * from membership where id=?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, inputNum);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				String num = rs.getString(1);
-				String id = rs.getString(2);
-				String pw = rs.getString(3);
-				String name = rs.getString(4);
-				String tel = rs.getString(5);
-				String addr = rs.getString(6);
-				dto.setNum(num);
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				String name = rs.getString(3);
+				String tel = rs.getString(4);
+				String addr = rs.getString(5);
 				dto.setId(id);
 				dto.setPw(pw);
 				dto.setName(name);
@@ -149,14 +147,13 @@ public class MembershipDAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "update membership set id = ?,pw =?,name=?,tel=?,addr=? where num =?";
+			String sql = "update membership set pw =?,name=?,tel=?,addr=? where id =?";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, dto.getId());
-			ps.setString(2, dto.getPw());
-			ps.setString(3, dto.getName());
-			ps.setString(4, dto.getTel());
-			ps.setString(5, dto.getAddr());
-			ps.setString(6, dto.getNum());
+			ps.setString(1, dto.getPw());
+			ps.setString(2, dto.getName());
+			ps.setString(3, dto.getTel());
+			ps.setString(4, dto.getAddr());
+			ps.setString(5, dto.getId());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

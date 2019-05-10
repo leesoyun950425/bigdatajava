@@ -22,86 +22,149 @@ import javax.swing.JPanel;
 
 public class MemberTest {
 	private static JTextField textField;
-	private static JTextField textField_1;
-	private static JTextField t1;
-	private static JTextField t2;
-	private static JPasswordField passwordField;
+	private static JTextField idText;
+	private static JTextField pwTextTestU;
+	private static JPasswordField pwText;
+	private static JPasswordField pwTextTest;
+	private static JTextField nameText;
+	private static JTextField telText;
+	private static JTextField addrText;
 	public static void main(String[] args) {
 		JFrame f = new JFrame();
 		f.setSize(434,463);
 		f.getContentPane().setLayout(null);
-		
 			
 		JLabel lblNewLabel = new JLabel("아이디");
 		lblNewLabel.setBounds(22, 10, 57, 15);
 		f.getContentPane().add(lblNewLabel);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(101, 7, 116, 21);
-		f.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		idText = new JTextField();
+		idText.setBounds(101, 7, 116, 21);
+		f.getContentPane().add(idText);
+		idText.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("중복확인");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String inputId = textField.getText();
+				String inputId = idText.getText();
 				MembershipDAO dao = new MembershipDAO();
 				MembershipDTO dto = dao.selectId(inputId);
 				String id = dto.getId();
-				if(inputId.equals(id)) {
-					JOptionPane.showMessageDialog(null, "중복됐습니다");
-				}else {
-					JOptionPane.showMessageDialog(null, "성공");
+				while(true) {
+					if(inputId.equals(id)) {
+						JOptionPane.showMessageDialog(null, "중복됐습니다.다시입력하세요");
+						String idw = JOptionPane.showInputDialog("ID재입력");
+						if(!idw.equals(id)) {
+							JOptionPane.showMessageDialog(null, "성공");
+							break;
+						}
+					}
 				}
 			}
 		});
 		btnNewButton_1.setBounds(255, 6, 97, 23);
 		f.getContentPane().add(btnNewButton_1);
-		
-		t1 = new JTextField();
-		t1.setBounds(101, 53, 116, 21);
-		f.getContentPane().add(t1);
-		t1.setColumns(10);
-		
-		t2 = new JTextField();
-		t2.setBounds(101, 110, 116, 21);
-		f.getContentPane().add(t2);
-		t2.setColumns(10);
-		if(t1.equals(t2)) {
-			
-		}else {
-			JLabel pwLable = new JLabel("다릅니다.");
-			f.getContentPane().add(pwLable);
-		}
-		
+//		if(t1.equals(t2)) {
+//			
+//		}else {
+//			JLabel pwLable = new JLabel("다릅니다.");
+//			f.getContentPane().add(pwLable);
+//		}
+//		
 		JLabel lblNewLabel_1 = new JLabel("비번");
 		lblNewLabel_1.setBounds(22, 56, 57, 15);
 		f.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("확인");
-		lblNewLabel_2.setBounds(22, 113, 57, 15);
+		lblNewLabel_2.setBounds(22, 81, 57, 15);
 		f.getContentPane().add(lblNewLabel_2);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(152, 161, 116, 21);
-		f.getContentPane().add(passwordField);
+//		JPanel panel = new JPanel();
+//		panel.setBounds(22, 217, 330, 179);
+//		f.getContentPane().add(panel);
 		
-		JLabel l1 = new JLabel("일치");
-		l1.setBounds(253, 113, 57, 15);
-		f.getContentPane().add(l1);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(22, 217, 330, 179);
-		f.getContentPane().add(panel);
 		
-		MembershipMain m1 = new MembershipMain();
-		JButton btnNewButton = new JButton("회원가입");
-		btnNewButton.addActionListener(new ActionListener() {
+	
+		pwTextTestU = new JTextField();
+		pwTextTestU.setBounds(255, 53, 116, 21);
+		f.getContentPane().add(pwTextTestU);
+		pwTextTestU.setColumns(10);
+		
+		pwText = new JPasswordField();
+		pwText.setBounds(101, 53, 116, 21);
+		f.getContentPane().add(pwText);
+		
+		pwTextTest = new JPasswordField();
+		pwTextTest.setBounds(101, 78, 116, 21);
+		f.getContentPane().add(pwTextTest);
+		
+		JButton btnNewButton_2 = new JButton("비밀번호 확인");
+		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				String pws = new String(pwText.getPassword()); 
+				String pws2 = new String(pwTextTest.getPassword());
+				if(pws2.equals(pws)) {
+					pwTextTestU.setText("일치!");
+				}else {
+					pwTextTestU.setText("불일치!");
+				}
 			}
 		});
-		btnNewButton.setBounds(309, 184, 97, 23);
+		btnNewButton_2.setBounds(235, 77, 97, 23);
+		f.getContentPane().add(btnNewButton_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("이름");
+		lblNewLabel_3.setBounds(12, 131, 57, 15);
+		f.getContentPane().add(lblNewLabel_3);
+		
+		JLabel label = new JLabel("전화번호");
+		label.setBounds(12, 156, 57, 15);
+		f.getContentPane().add(label);
+		
+		JLabel label_1 = new JLabel("주소");
+		label_1.setBounds(12, 181, 57, 15);
+		f.getContentPane().add(label_1);
+		
+		nameText = new JTextField();
+		nameText.setBounds(101, 128, 116, 21);
+		f.getContentPane().add(nameText);
+		nameText.setColumns(10);
+		
+		telText = new JTextField();
+		telText.setColumns(10);
+		telText.setBounds(101, 153, 116, 21);
+		f.getContentPane().add(telText);
+		
+		addrText = new JTextField();
+		addrText.setColumns(10);
+		addrText.setBounds(101, 188, 116, 21);
+		f.getContentPane().add(addrText);
+		
+		JButton btnNewButton = new JButton("회원가입 완료");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				MembershipDAO dao = new MembershipDAO();
+				MembershipDTO dto = new MembershipDTO();
+				
+				String id = idText.getText();
+				String pws = new String(pwText.getPassword());
+				String name = nameText.getText();
+				String tel = telText.getText();
+				String addr = addrText.getText();
+				
+				dto.setId(id);
+				dto.setPw(pws);
+				dto.setName(name);
+				dto.setTel(tel);
+				dto.setAddr(addr);
+				
+				dao.insert(dto);
+				System.exit(0);
+			}
+		});
+
+		btnNewButton.setBounds(124, 315, 116, 23);
 		f.getContentPane().add(btnNewButton);
 		
 		

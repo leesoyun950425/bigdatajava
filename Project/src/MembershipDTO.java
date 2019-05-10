@@ -1,7 +1,7 @@
 
 
 public class MembershipDTO {
-	private String num;
+//	private int num;
 	private String id;
 	private String pw;
 	private String name;
@@ -12,20 +12,13 @@ public class MembershipDTO {
 	public MembershipDTO() {
 		
 	}
-	public MembershipDTO(String num, String id, String pw, String name, String tel, String addr) {
-		this.num = num;
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.tel = tel;
-		this.addr = addr;
-	}
-	public String getNum() {
-		return num;
-	}
-	public void setNum(String num) {
-		this.num = num;
-	}
+
+//	public int getNum() {
+//		return num;
+//	}
+//	public void setNum(int num) {
+//		this.num = num;
+//	}
 	public String getId() {
 		return id;
 	}
