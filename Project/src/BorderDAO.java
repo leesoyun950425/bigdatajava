@@ -1,5 +1,4 @@
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,13 +17,12 @@ public class BorderDAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "insert into border values(?,?,?,?,?)";
+			String sql = "insert into border values(?,?,?,?)";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, dto.getNum());
-			ps.setString(2, dto.getContent());
-			ps.setString(3, dto.getUid());
-			ps.setString(4, dto.getDate());
-			ps.setString(5, dto.getCount());
+			ps.setString(1, dto.getContent());
+			ps.setString(2, dto.getUid());
+			ps.setString(3, dto.getDate());
+			ps.setString(4, dto.getCount());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -43,17 +41,15 @@ public class BorderDAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "select * from border where id =?";
+			String sql = "select * from border where uid =?";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, inputId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-			String num = rs.getString(1);
-			String content = rs.getString(2);
-			String uid = rs.getString(3);
-			String date = rs.getString(4);
-			String count = rs.getString(5);
-			dto.setNum(num);
+			String content = rs.getString(1);
+			String uid = rs.getString(2);
+			String date = rs.getString(3);
+			String count = rs.getString(4);
 			dto.setCount(count);
 			dto.setUid(uid);
 			dto.setDate(date);
@@ -77,12 +73,11 @@ public class BorderDAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "update border set content =?,uid=?,date=? where num =? ";
+			String sql = "update border set content =?,date=? where uid =? ";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, dto.getContent());
-			ps.setString(2, dto.getUid());
-			ps.setString(3, dto.getDate());
-			ps.setString(4, dto.getNum());
+			ps.setString(2, dto.getDate());
+			ps.setString(3, dto.getUid());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -100,9 +95,9 @@ public class BorderDAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "delete from border where num=?";
+			String sql = "delete from border where uid=?";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, dto.getNum());
+			ps.setString(1, dto.getUid());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

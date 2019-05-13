@@ -30,61 +30,61 @@ public class MembershipMain extends JFrame{
 		setSize(400, 384);
 		setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("ì•„ì´ë””");
-		lblNewLabel_1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		JLabel lblNewLabel_1 = new JLabel("¾ÆÀÌµğ");
+		lblNewLabel_1.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		lblNewLabel_1.setBounds(12, 46, 100, 15);
 		add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("ë¹„ë°€ë²ˆí˜¸");
-		lblNewLabel_2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		JLabel lblNewLabel_2 = new JLabel("ºñ¹Ğ¹øÈ£");
+		lblNewLabel_2.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		lblNewLabel_2.setBounds(12, 82, 100, 15);
 		add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("ë¹„ë°€ë²ˆí˜¸ í™•ì¸");
-		lblNewLabel_3.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		JLabel lblNewLabel_3 = new JLabel("ºñ¹Ğ¹øÈ£ È®ÀÎ");
+		lblNewLabel_3.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		lblNewLabel_3.setBounds(12, 117, 100, 15);
 		add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("ì´ë¦„");
-		lblNewLabel_4.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		JLabel lblNewLabel_4 = new JLabel("ÀÌ¸§");
+		lblNewLabel_4.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		lblNewLabel_4.setBounds(12, 186, 100, 15);
 		add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("ì „í™”ë²ˆí˜¸");
-		lblNewLabel_5.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		JLabel lblNewLabel_5 = new JLabel("ÀüÈ­¹øÈ£");
+		lblNewLabel_5.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		lblNewLabel_5.setBounds(12, 224, 100, 15);
 		add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_6 = new JLabel("ì£¼ì†Œ");
-		lblNewLabel_6.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		JLabel lblNewLabel_6 = new JLabel("ÁÖ¼Ò");
+		lblNewLabel_6.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		lblNewLabel_6.setBounds(12, 266, 100, 15);
 		add(lblNewLabel_6);
 		
 		idText = new JTextField();
-		idText.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		idText.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		idText.setBounds(124, 40, 139, 21);
 		add(idText);
 		idText.setColumns(10);
 
 		nameText = new JTextField();
-		nameText.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		nameText.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		nameText.setBounds(124, 180, 139, 21);
 		add(nameText);
 		nameText.setColumns(10);
 		
 		telText = new JTextField();
-		telText.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		telText.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		telText.setBounds(124, 218, 139, 21);
 		add(telText);
 		telText.setColumns(10);
 		
 		addrText = new JTextField();
-		addrText.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		addrText.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		addrText.setBounds(124, 260, 253, 21);
 		add(addrText);
 		addrText.setColumns(10);
 		
-		JButton b2 = new JButton("íšŒì›ê°€ì… ì™„ë£Œ");
+		JButton b2 = new JButton("È¸¿ø°¡ÀÔ ¿Ï·á");
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MembershipDAO dao = new MembershipDAO();
@@ -103,16 +103,16 @@ public class MembershipMain extends JFrame{
 				dto.setAddr(addr);
 				
 				dao.insert(dto);
-				System.exit(0);
+				dispose();
 			}
 			
 		});
 		b2.setForeground(new Color(255, 105, 180));
-		b2.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		b2.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		b2.setBounds(134, 322, 119, 23);
 		add(b2);
 		
-		JButton b1 = new JButton("ì¤‘ë³µí™•ì¸");
+		JButton b1 = new JButton("Áßº¹È®ÀÎ");
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String inputId = idText.getText();
@@ -122,35 +122,26 @@ public class MembershipMain extends JFrame{
 				String idw = null;
 				while(true) {
 					if(inputId.equals(id)) {
-						JOptionPane.showMessageDialog(null, "ì¤‘ë³µëìŠµë‹ˆë‹¤.ë‹¤ì‹œì…ë ¥í•˜ì„¸ìš”");
-						idw = JOptionPane.showInputDialog("IDì¬ì…ë ¥");
+						JOptionPane.showMessageDialog(null, "Áßº¹µÆ½À´Ï´Ù.´Ù½ÃÀÔ·ÂÇÏ¼¼¿ä");
+						idw = JOptionPane.showInputDialog("IDÀçÀÔ·Â");
 						if(!idw.equals(id)) {
-							JOptionPane.showMessageDialog(null, "ì‚¬ìš©ê°€ëŠ¥í•œ IDì…ë‹ˆë‹¤");
+							JOptionPane.showMessageDialog(null, "»ç¿ë°¡´ÉÇÑ IDÀÔ´Ï´Ù");
 							break;
 						}
 						}
-//					if(!idw.equals(id)) {
-//						JOptionPane.showMessageDialog(null, "ì‚¬ìš©ê°€ëŠ¥í•œ IDì…ë‹ˆë‹¤");
-//						break;
-//						}else if(idw.equals(id)) {
-//							JOptionPane.showMessageDialog(null, "ì¤‘ë³µëìŠµë‹ˆë‹¤.ë‹¤ì‹œì…ë ¥í•˜ì„¸ìš”");
-//							idw = JOptionPane.showInputDialog("IDì¬ì…ë ¥");
-						else {
-							JOptionPane.showMessageDialog(null, "ì‚¬ìš©ê°€ëŠ¥í•œ IDì…ë‹ˆë‹¤");
-							break;
-						}
+				
 					}
 				}
 		});
 		b1.setForeground(new Color(255, 105, 180));
-		b1.setFont(new Font("ë‚˜ëˆ”ê³ ë”•", Font.BOLD, 14));
+		b1.setFont(new Font("³ª´®°íµñ", Font.BOLD, 14));
 		b1.setBounds(288, 43, 100, 23);
 		add(b1);
 		
 		JToolBar toolBar = new JToolBar();
 		toolBar.setForeground(Color.BLACK);
-		toolBar.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 17));
-		toolBar.setToolTipText("íšŒì›ê°€ì…");
+		toolBar.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 17));
+		toolBar.setToolTipText("È¸¿ø°¡ÀÔ");
 		toolBar.setBackground(new Color(100, 149, 237));
 		toolBar.setBounds(0, 0, 400, 21);
 		add(toolBar);
@@ -168,17 +159,17 @@ public class MembershipMain extends JFrame{
 		add(pwTextTestU);
 		pwTextTestU.setColumns(10);
 		
-		JButton btnNewButton = new JButton("ë¹„ë°€ë²ˆí˜¸ í™•ì¸");
+		JButton btnNewButton = new JButton("ºñ¹Ğ¹øÈ£ È®ÀÎ");
 		btnNewButton.setForeground(new Color(255, 105, 180));
-		btnNewButton.setFont(new Font("êµ´ë¦¼", Font.BOLD, 12));
+		btnNewButton.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		btnNewButton.setBounds(266, 144, 119, 23);
 		add(btnNewButton);
 		String pws = new String(pwText.getPassword()); 
 		String pws2 = new String(pwTextTest.getPassword());
 		if(pws.equals(pws2)) {
-			pwTextTestU.setText("ì¼ì¹˜!");
+			pwTextTestU.setText("ÀÏÄ¡!");
 		}else {
-			pwTextTestU.setText("ë¶ˆì¼ì¹˜!");
+			pwTextTestU.setText("ºÒÀÏÄ¡!");
 		}
 		
 		setVisible(true);

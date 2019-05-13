@@ -1,17 +1,9 @@
 
-
 public class BorderDTO {
-	private String num;
 	private String content;
 	private String uid;
 	private String date;
 	private String count;
-	public String getNum() {
-		return num;
-	}
-	public void setNum(String num) {
-		this.num = num;
-	}
 	public String getContent() {
 		return content;
 	}

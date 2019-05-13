@@ -1,5 +1,3 @@
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -89,6 +87,32 @@ public class MembershipDAO {
 			if(rs.next()) {
 				String id = rs.getString(2);
 				dto.setId(id);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				rs.close();
+				ps.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return dto;
+	}
+	public MembershipDTO selectPw(String inputPw) {
+		MembershipDTO dto = new MembershipDTO();
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(url,user,password);
+			String sql = "select * from membership where pw=?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, inputPw);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				String pw = rs.getString(3);
+				dto.setPw(pw);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

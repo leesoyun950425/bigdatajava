@@ -1,7 +1,6 @@
 
 
 public class MembershipDTO {
-//	private int num;
 	private String id;
 	private String pw;
 	private String name;
@@ -13,12 +12,6 @@ public class MembershipDTO {
 		
 	}
 
-//	public int getNum() {
-//		return num;
-//	}
-//	public void setNum(int num) {
-//		this.num = num;
-//	}
 	public String getId() {
 		return id;
 	}

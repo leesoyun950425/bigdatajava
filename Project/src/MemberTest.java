@@ -34,7 +34,7 @@ public class MemberTest {
 		f.setSize(434,463);
 		f.getContentPane().setLayout(null);
 			
-		JLabel lblNewLabel = new JLabel("ì•„ì´ë””");
+		JLabel lblNewLabel = new JLabel("¾ÆÀÌµğ");
 		lblNewLabel.setBounds(22, 10, 57, 15);
 		f.getContentPane().add(lblNewLabel);
 		
@@ -43,7 +43,7 @@ public class MemberTest {
 		f.getContentPane().add(idText);
 		idText.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("ì¤‘ë³µí™•ì¸");
+		JButton btnNewButton_1 = new JButton("Áßº¹È®ÀÎ");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String inputId = idText.getText();
@@ -52,10 +52,10 @@ public class MemberTest {
 				String id = dto.getId();
 				while(true) {
 					if(inputId.equals(id)) {
-						JOptionPane.showMessageDialog(null, "ì¤‘ë³µëìŠµë‹ˆë‹¤.ë‹¤ì‹œì…ë ¥í•˜ì„¸ìš”");
-						String idw = JOptionPane.showInputDialog("IDì¬ì…ë ¥");
+						JOptionPane.showMessageDialog(null, "Áßº¹µÆ½À´Ï´Ù.´Ù½ÃÀÔ·ÂÇÏ¼¼¿ä");
+						String idw = JOptionPane.showInputDialog("IDÀçÀÔ·Â");
 						if(!idw.equals(id)) {
-							JOptionPane.showMessageDialog(null, "ì„±ê³µ");
+							JOptionPane.showMessageDialog(null, "¼º°ø");
 							break;
 						}
 					}
@@ -67,15 +67,15 @@ public class MemberTest {
 //		if(t1.equals(t2)) {
 //			
 //		}else {
-//			JLabel pwLable = new JLabel("ë‹¤ë¦…ë‹ˆë‹¤.");
+//			JLabel pwLable = new JLabel("´Ù¸¨´Ï´Ù.");
 //			f.getContentPane().add(pwLable);
 //		}
 //		
-		JLabel lblNewLabel_1 = new JLabel("ë¹„ë²ˆ");
+		JLabel lblNewLabel_1 = new JLabel("ºñ¹ø");
 		lblNewLabel_1.setBounds(22, 56, 57, 15);
 		f.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("í™•ì¸");
+		JLabel lblNewLabel_2 = new JLabel("È®ÀÎ");
 		lblNewLabel_2.setBounds(22, 81, 57, 15);
 		f.getContentPane().add(lblNewLabel_2);
 		
@@ -99,30 +99,30 @@ public class MemberTest {
 		pwTextTest.setBounds(101, 78, 116, 21);
 		f.getContentPane().add(pwTextTest);
 		
-		JButton btnNewButton_2 = new JButton("ë¹„ë°€ë²ˆí˜¸ í™•ì¸");
+		JButton btnNewButton_2 = new JButton("ºñ¹Ğ¹øÈ£ È®ÀÎ");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String pws = new String(pwText.getPassword()); 
 				String pws2 = new String(pwTextTest.getPassword());
 				if(pws2.equals(pws)) {
-					pwTextTestU.setText("ì¼ì¹˜!");
+					pwTextTestU.setText("ÀÏÄ¡!");
 				}else {
-					pwTextTestU.setText("ë¶ˆì¼ì¹˜!");
+					pwTextTestU.setText("ºÒÀÏÄ¡!");
 				}
 			}
 		});
 		btnNewButton_2.setBounds(235, 77, 97, 23);
 		f.getContentPane().add(btnNewButton_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("ì´ë¦„");
+		JLabel lblNewLabel_3 = new JLabel("ÀÌ¸§");
 		lblNewLabel_3.setBounds(12, 131, 57, 15);
 		f.getContentPane().add(lblNewLabel_3);
 		
-		JLabel label = new JLabel("ì „í™”ë²ˆí˜¸");
+		JLabel label = new JLabel("ÀüÈ­¹øÈ£");
 		label.setBounds(12, 156, 57, 15);
 		f.getContentPane().add(label);
 		
-		JLabel label_1 = new JLabel("ì£¼ì†Œ");
+		JLabel label_1 = new JLabel("ÁÖ¼Ò");
 		label_1.setBounds(12, 181, 57, 15);
 		f.getContentPane().add(label_1);
 		
@@ -141,7 +141,7 @@ public class MemberTest {
 		addrText.setBounds(101, 188, 116, 21);
 		f.getContentPane().add(addrText);
 		
-		JButton btnNewButton = new JButton("íšŒì›ê°€ì… ì™„ë£Œ");
+		JButton btnNewButton = new JButton("È¸¿ø°¡ÀÔ ¿Ï·á");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				MembershipDAO dao = new MembershipDAO();
