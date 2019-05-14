@@ -85,7 +85,7 @@ public class MembershipDAO {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, inputId);
 			rs = ps.executeQuery();
-			if(rs.next() || inputId.equals("")) {
+			if(rs.next()) {
 				String id = rs.getString(2);
 				dto.setId(id);
 			}

@@ -16,9 +16,7 @@ import javax.swing.JTextField;
 public class LoginMain extends JPanel{
 	private JButton jButton1;
 	private MainTest win;
-	public MembershipDTO dto;
-	static JTextField idText = new JTextField();
-	static String inputId = idText.getText();
+	static String sessionId;
 	
 	public LoginMain() {
 		
@@ -42,7 +40,7 @@ public class LoginMain extends JPanel{
 	      lb2.setBounds(12, 130, 76, 21);
 	      add(lb2);
 	      
-	     
+	      JTextField idText = new JTextField();
 	      idText.setBounds(112, 78, 139, 21);
 	      add(idText);
 	      idText.setColumns(10);
@@ -55,15 +53,20 @@ public class LoginMain extends JPanel{
 	      JButton b2 = new JButton("\uB85C\uADF8\uC778");
 	      b2.addActionListener(new ActionListener() {
 	      	public void actionPerformed(ActionEvent e) {
-	      		inputId = idText.getText();
+	      		String inputId = idText.getText();
 	      		String inputPw = pwText.getText();
 	      		MembershipDAO dao = new MembershipDAO();
-	      		dto = dao.selectId(inputId);
+	      		
+	      		MembershipDTO dto = dao.selectId(inputId);
 	      		MembershipDTO dto1 = dao.selectPw(inputPw);
 	      		String id = dto.getId();
 	      		String pw = dto1.getPw();
+	      		
 	      		if(inputId.equals(id) && inputPw.equals(pw)) {
 	      			win.change("LoginMain2");
+	      			sessionId = inputId;
+	      			LoginMain2 login2 = new LoginMain2();
+	      			login2.l1.setText(sessionId);
 	      		}else {
 	      			JOptionPane.showMessageDialog(null, "아이디 혹은 비밀번호를 잘못입력하셨습니다.");
 	      		}
@@ -94,21 +97,6 @@ public class LoginMain extends JPanel{
 	      });
 	      btnNewButton.setBounds(60, 269, 129, 29);
 	      add(btnNewButton);
-	      inputId = idText.getText();
 	      
 	}
-	
-	
-//	public String getIdText() {
-//		MembershipDAO dao = new MembershipDAO();
-//		dto = dao.selectId(inputId);
-//		String id = dto.getId();
-//		if(inputId.equals(id)) {
-//			return inputId;
-//		}
-//		return inputId;
-//	}
-	
-	
-	
 }
