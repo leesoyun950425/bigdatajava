@@ -7,11 +7,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Event;
+
+import javax.swing.JTextField;
 
 public class LoginMain2 extends JPanel{
 private MainTest win;
 static String inputId;
 static JLabel l1;
+static JButton logoutbt;
 
 public LoginMain2() {
 	inputId = LoginMain.sessionId;
@@ -49,21 +53,24 @@ public LoginMain2(MainTest win) {
 	btnNewButton.setBounds(42, 139, 148, 34);
 	add(btnNewButton);
 	
-	JButton btnNewButton_1 = new JButton("로그아웃");
-	btnNewButton_1.setBackground(new Color(255, 255, 255));
-	btnNewButton_1.setFont(new Font("굴림", Font.BOLD, 22));
-	btnNewButton_1.addActionListener(new ActionListener() {
+	logoutbt = new JButton("로그아웃");
+	logoutbt.setBackground(new Color(255, 255, 255));
+	logoutbt.setFont(new Font("굴림", Font.BOLD, 22));
+	logoutbt.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			win.change("LoginMain");
+			LoginMain2.l1.setText("");
+			LoginMain.idText.setText("");
+			LoginMain.pwText.setText("");
 		}
 	});
-	btnNewButton_1.setBounds(142, 208, 129, 34);
-	add(btnNewButton_1);
+	logoutbt.setBounds(142, 208, 129, 34);
+	add(logoutbt);
 	
 	JButton button = new JButton("탈퇴하기");
 	button.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			LoginDelete d = new LoginDelete();
+			LoginDelete d = new LoginDelete(win);
 			d.idLBel.setText(inputId);
 		}
 	});
@@ -71,5 +78,25 @@ public LoginMain2(MainTest win) {
 	button.setBackground(Color.WHITE);
 	button.setBounds(226, 143, 148, 34);
 	add(button);
+	
+	JButton btnNewButton_1 = new JButton("게시판");
+	btnNewButton_1.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			BorderMain bm = new BorderMain();
+		}
+	});
+	btnNewButton_1.setBounds(153, 286, 97, 23);
+	add(btnNewButton_1);
+	
+	JButton btnNewButton_2 = new JButton("마이페이지");
+	btnNewButton_2.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			MemberMy my = new MemberMy();
+		}
+	});
+	btnNewButton_2.setBounds(142, 330, 129, 23);
+	add(btnNewButton_2);
+	
+	setVisible(true);
 }
 }

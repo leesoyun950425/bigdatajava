@@ -2,6 +2,7 @@ package java14;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -11,8 +12,10 @@ import java.awt.event.ActionEvent;
 public class LoginDelete extends JFrame{
 	static String inputDId;
 	static JLabel idLBel;
+	private MainTest win;
 	
-	public LoginDelete() {
+	public LoginDelete(MainTest win) {
+		this.win = win;
 		getContentPane().setLayout(null);
 		setSize(430, 284);
 		
@@ -41,6 +44,7 @@ public class LoginDelete extends JFrame{
 					dto.setId(id);
 					dao.delete(dto);
 				}
+				win.change("LoginMain");
 				dispose();
 			}
 		});

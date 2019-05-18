@@ -1,14 +1,21 @@
 package java14;
 import javax.swing.JFrame;
 
+
 public class MainTest extends JFrame{
 	public MainTest() {
 	}
+
+	static MainTest win;
 	
+
 	public LoginMain login1 = null;
 	public LoginMain2 login2 = null;
-	public LoginUpdate login3 = null;
+//	public MainTTT mT = null;
 	 
+//	public MainTest() {
+//	}
+//	
 	 public void change(String panelName) {
 			if(panelName.equals("LoginMain")) {
 				getContentPane().removeAll();
@@ -32,7 +39,5 @@ public class MainTest extends JFrame{
 		win.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		win.setSize(500, 700);
 		win.setVisible(true);
-		
-		
 	}
 }
