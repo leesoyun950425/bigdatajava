@@ -38,14 +38,15 @@ public class BorderDAO {
 			}
 		}
 	}
-	public BorderDTO select(String inputId) {
+
+	public BorderDTO selectTitle(String inputTitle) {
 		BorderDTO dto = new BorderDTO();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "select * from border where uid = ?";
+			String sql = "select * from border where title = ?";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, dto.getUid());
+			ps.setObject(1, inputTitle);
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				String title = rs.getString(2);
@@ -72,6 +73,7 @@ public class BorderDAO {
 		}
 		return dto;
 	}
+	
 	public ArrayList selectAll() {
 		ArrayList list = new ArrayList();
 		BorderDTO dto = null;
@@ -115,6 +117,26 @@ public class BorderDAO {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, dto.getContent());
 			ps.setString(2, dto.getUid());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				ps.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}public void updatecount(BorderDTO dto) {
+//		BorderDTO dto = new BorderDTO();
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(url,user,password);
+			String sql = "update border set count =? where title = ?";
+			ps = con.prepareStatement(sql);
+			ps.setInt(1,dto.getCount());
+			ps.setString(2, dto.getTitle());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
