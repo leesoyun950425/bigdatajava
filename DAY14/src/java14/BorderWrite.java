@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.awt.event.ActionEvent;
@@ -67,13 +68,17 @@ public class BorderWrite extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				BorderDAO dao = new BorderDAO();
 				BorderDTO dto = new BorderDTO();
+				ArrayList list = dao.selectAll();
+				BorderDTO dto2 = (BorderDTO)list.get(0);
 				
+				int num = BorderMain.numInput+1;
 				String title = titleText.getText();
 				String content = contentText.getText();
 				String uid = IdLb.getText();
 				String tdate = today;
 				int count = 0;
 				
+				dto2.setNum(num);
 				dto.setTitle(title);
 				dto.setContent(content);
 				dto.setUid(uid);
@@ -83,7 +88,7 @@ public class BorderWrite extends JFrame{
 				
 				modelInsert = BorderMain.model;
 				tablewrite = new JTable(modelInsert);
-				modelInsert.addRow(new Object[] {title,uid,tdate,count});
+				modelInsert.addRow(new Object[] {num,title,uid,tdate,count});
 				dispose();
 			}
 		});

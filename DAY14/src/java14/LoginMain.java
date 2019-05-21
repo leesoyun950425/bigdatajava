@@ -1,6 +1,5 @@
 package java14;
 
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -17,17 +16,18 @@ import javax.swing.JPasswordField;
 public class LoginMain extends JPanel{
 	
 	private JButton jButton1;
-	private MainTest win;
+	private MainTest win2;
 	public MembershipDTO dto;
+	
 	
 	static String sessionId;
 	static JTextField idText;
 	static JPasswordField pwText;
 
-//	public LoginMain() {
-//	}
-	public LoginMain(MainTest win) {
-		 this.win = win;
+	public LoginMain() {
+	}
+	public LoginMain(MainTest win2) {
+		 this.win2 = win2;
 	      setBackground(Color.BLACK);
 	
 	      setBounds(0, 66, 263, 659);
@@ -44,6 +44,7 @@ public class LoginMain extends JPanel{
 	      lb2.setForeground(Color.WHITE);
 	      lb2.setBounds(12, 130, 76, 21);
 	      add(lb2);
+	      
 	      
 	      idText = new JTextField();
 	      idText.setBounds(112, 78, 139, 21);
@@ -68,7 +69,7 @@ public class LoginMain extends JPanel{
 	      		String pw = dto1.getPw();
 	      		
 	      		if(inputId.equals(id) && inputPw.equals(pw)) {
-	      			win.change("LoginMain2");
+	      			win2.change2("LoginMain2");
 	      			sessionId = inputId;
 	      			LoginMain2 login2 = new LoginMain2();
 	      			login2.l1.setText(sessionId);
@@ -118,6 +119,9 @@ public class LoginMain extends JPanel{
 	      });
 	      btnNewButton_2.setBounds(127, 238, 124, 23);
 	      add(btnNewButton_2);
+	      
 	    
+	      
+	      setVisible(true);
 	}
 }

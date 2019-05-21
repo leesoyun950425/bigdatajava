@@ -4,23 +4,28 @@ import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BorderSelect extends JFrame{
 	static JLabel conLb;
+	int inputNum;
+	String userid;
+	static String uid1;
 	
-	String inputTitle;
 	public BorderSelect() {
 		
-		inputTitle = BorderMain.title;
-		
+		inputNum = BorderMain.num;
+		userid = LoginMain2.inputId;
 
 		BorderDAO dao = new BorderDAO();
-		BorderDTO dto1 = dao.selectTitle(inputTitle);
+		BorderDTO dto1 = dao.selectNum(inputNum);
 		
 		String title1 = dto1.getTitle();
 		String content1 = dto1.getContent();
-		String uid1 = dto1.getUid();
+		uid1 = dto1.getUid();
 		
 		setSize(363,457);
 		
@@ -54,11 +59,32 @@ public class BorderSelect extends JFrame{
 		getContentPane().add(idLb);
 		idLb.setText(uid1);
 		
-		JButton btnNewButton = new JButton("\uC218\uC815");
+		JButton btnNewButton = new JButton("수정");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!uid1.equals(userid)) {
+					JOptionPane.showMessageDialog(null, "본인이 작성한 게시물만 수정가능합니다!!");
+				}else {
+					BorderUpdate bu = new BorderUpdate();
+					dispose();
+				}
+			}
+		});
 		btnNewButton.setBounds(50, 364, 97, 23);
 		getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("\uC0AD\uC81C");
+		JButton btnNewButton_1 = new JButton("삭제");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!uid1.equals(userid)) {
+					JOptionPane.showMessageDialog(null, "본인이 작성한 게시물만 삭제가능합니다!!");
+				}else {
+					BorderDelete bd = new BorderDelete();
+					dispose();
+				}
+				
+			}
+		});
 		btnNewButton_1.setBounds(186, 364, 97, 23);
 		getContentPane().add(btnNewButton_1);
 		

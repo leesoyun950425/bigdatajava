@@ -1,21 +1,21 @@
 package java14;
 
-import java.util.Date;
-
 public class BorderDTO {
-//	private String num;
+	private int num;
 	private String title;
+	private String titleUp;
+
 	private String content;
 	private String uid;
 	private String tdate;
 	private int count;
 	private Object title2;
-//	public String getNum() {
-//		return num;
-//	}
-//	public void setNum(String num) {
-//		this.num = num;
-//	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public String getContent() {
 		return content;
 	}
@@ -52,6 +52,11 @@ public class BorderDTO {
 	}
 	public void setCount(int count) {
 		this.count = count;
-//		return count;
+	}
+	public String getTitleUp() {
+		return titleUp;
+	}
+	public void setTitleUp(String titleUp) {
+		this.titleUp = titleUp;
 	}
 }
