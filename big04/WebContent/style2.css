@@ -1,0 +1,75 @@
+@charset "UTF-8";
+#d1{
+	width: 2000px;
+	height: 500px;
+	background: #424044;
+	padding-top: 100px;
+}
+#ta{
+	width: 300px;
+	height: 400px;
+	margin-left: 100px;
+}
+.t1{
+	color: pink;
+	font-family: 굴림;
+	font-size: 30px;
+	text-align: center;
+}
+.t1:hover{
+	background: white;
+	color: brown;
+	font-family: 굴림;
+	font-size: 30px;
+	text-align: center;
+}
+.t2{
+	color:#7bea48;
+	font-family: 굴림;
+	font-size: 30px;
+	text-align: center;
+}
+.t3{
+	color: #f1f433;
+	font-family: 굴림;
+	font-size: 30px;
+	text-align: center;
+}
+.t4{
+	color: #32f49d;
+	font-family: 굴림;
+	font-size: 30px;
+	text-align: center;
+}
+#d2{
+	width: 150px;
+	height: 180px;
+	background: #e8d871;
+	position: fixed;
+	right: 30px;
+	top:20px;
+	padding-right: 20px;
+	text-align: center;
+	border-radius: 10px 100px 10px 100px;
+	box-shadow: 0 10px 10px 10px white;
+}
+
+#d2 li{
+	list-style: none;
+	font-family: 맑은 고딕;
+	font-size: 25px;
+	text-align: left;
+}
+#d3{
+	background-image: url(m1.png);
+	width: 2000px;
+	height: 300px;
+}
+#d4{
+	padding-left: 300px;
+	padding-top: 20px;
+	font-size: 20px;
+	width: 50px;
+	height: 30px;
+	background: gold;
+}
