@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function pig(name,weight,height){
+		result = (height-100)*0.9;
+		if(weight<=result){
+			document.write(name+"님의 몸무게는 적정몸무게 입니다.");
+		}else if(weight>result){
+			document.write(name+"님의 몸무게는 비만입니다.")
+		}
+	}
+	input1 = prompt("이름을 입력하세요.");
+	input2 = prompt("몸무게를 입력하세요.");
+	input3 = parseInt(prompt("키를 입력하세요."));
+	pig(input1,input2,input3);
+</script>
+</head>
+<body>
+</body>
+</html>

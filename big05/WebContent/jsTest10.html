@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function com(){
+		var data = document.getElementById("id");
+		var data2 = data.value;
+		var data3 = document.getElementById("pw");
+		var data4 = data3.value;
+		var adminId = "admin";
+		var adminPw = "1234";
+		var userId = "user";
+		var userPw = "1111";
+		if(data2==adminId && data4==adminPw){
+			location.href = "manager.html";
+		}else if(data2==userId && data4==userPw){
+			location.href = "user.html";
+		}else{
+			alert("아이디와 비밀번호를 확인해주세요");
+			location.href = "jsTest10.html";
+		}
+	}
+</script>
+</head>
+<body>
+	ID : <input type="text" id="id" name="id"> <br>
+	PW : <input type="text" id="pw" name="pw"> <br>
+	<input type="button" value="확인" onclick="com()">
+</body>
+</html>

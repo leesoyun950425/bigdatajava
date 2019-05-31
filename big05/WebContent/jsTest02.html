@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function send(){
+		var data = document.getElementById("t1");
+		var data2 = data.value;
+		location.href = "server.jsp?te="+data2;
+	}
+</script>
+</head>
+<body>
+	<textarea rows="20" cols="20" id="t1" name="te"></textarea>
+	<input type="button" value="전송" onclick="send()">
+</body>
+</html>

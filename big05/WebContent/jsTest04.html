@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var num = parseInt("0");
+	function mina(){
+		console.log(num-=1);
+	}
+	function plus(){
+		console.log(num+=1);
+	}
+	function zero(){
+		console.log(num=parseInt("0"));
+	}
+	console.log(num);
+</script>
+</head>
+<body>
+	<input type="button" value="감소" onclick="mina()">
+	<input type="button" value="증가" onclick="plus()">
+	<input type="button" value="초기화" onclick="zero()">
+</body>
+</html>
