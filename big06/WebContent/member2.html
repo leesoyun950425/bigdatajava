@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="member2.jsp">
+	<h1>정보를 입력해주세요.</h1>
+	<hr color="pink">
+	아이디 : <input type="text" name="id"><br>
+	비밀번호 : <input type="text" name="pw"><br>
+	이름 : <input type="text" name="name"><br>
+	생년월일 : <input type="text" name="year" placeholder="년(4자)">
+	<select name="month">
+		<option>월</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+	</select>
+		<input type="text" name="date" placeholder="일"> <br>
+	성별 : <select name="gender">
+			<option>성별</option>
+			<option value="man">남자</option>
+			<option value="woman">여자</option>
+		</select> <br>
+	휴대전화 : <input type="text" name="tel"><br>
+	취미 : <input type="checkbox" name="hobby" value="run">달리기
+	<input type="checkbox" name="hobby" value="read">읽기
+	<input type="checkbox" name="hobby" value="music">노래듣기
+	<br>
+	<input type="submit" value="완료">
+	</form>
+</body>
+</html>
