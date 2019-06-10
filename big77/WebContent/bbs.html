@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<center>
+<h1>게시판</h1>
+<hr color="gray">
+<div class="alert alert-secondary" role="alert">
+<form action="bbs.jsp">
+	<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">아이디</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="id">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">제목</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1" name="title">
+</div>
+
+	<div class="input-group" > 
+  <div class="input-group-prepend">
+    <span class="input-group-text" >내용</span>
+	 </div>
+	<textarea  class="form-control" aria-label="With textarea" rows="20" placeholder="여기에 입력하세요." name="content"></textarea>
+	 </div>
+	 
+	<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">기타사항</span>
+  </div>
+  <input type="text" class="form-control" placeholder="etc" aria-label="Username" aria-describedby="basic-addon1" name="etc">
+</div>
+
+	<button type="submit" class="btn btn-dark">입력하기</button>
+
+</form>
+</div>
+</center>
+</body>
+</html>
