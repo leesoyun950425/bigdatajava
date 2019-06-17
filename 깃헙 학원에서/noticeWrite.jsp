@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +30,12 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="imgtest.js"></script>
+<script type="text/javascript">
+function dodum() {
+	alert("됨");
+}
 
+</script>
 </head>
 <body>
 	<div>
@@ -44,7 +51,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
-						<li><a class="nav-link" href="index.html">Home</a></li>
+						<li><a class="nav-link" href="index.jsp?index=0">Home</a></li>
 						<li><a class="nav-link" href="about.html">마이페이지</a></li>
 						<li><a class="nav-link" href="post.html">정보</a></li>
 						<li><a class="nav-link" href="contact.html">게시판</a></li>
@@ -69,18 +76,29 @@
 	</div>
 	<div align="center">
 		<h1>게시판 글쓰기</h1>
-		<form action="noticeWrite.jsp">
+		<form action="noticeWriteRe.jsp">
 			제목: <input type="text" placeholder="제목을 입력해주세요." width="300"
 				size="80" name="title"> <br> 
-			글꼴 : <select>
-				<option class="font_family1" value="dodum">돋움체</option>
-				<option class="font_family2" value="궁서체">궁서체</option>
-				<option class="font_family3" value="굴림체">굴림체</option>
+			글꼴 : <select name="font_family">
+				<option class="font_family1" value="dodum" >돋움체</option>
+				<option class="font_family2" value="goong">궁서체</option>
+				<option class="font_family3" value="gulim">굴림체</option>
 				<option class="font_family4" value="Courier">Courier</option>
 				<option class="font_family5" value="Impact">Impact</option>
-			</select> <br> 내용 :
+			</select>  
+			크기 : <select name="font_size">
+				<option value="10px" >10pt</option>
+				</select>
+				
+			굵기 : <select name="font_weight">
+				<option value="bold" >굵게</option>
+			</select>
+			정렬 : <select name="font">
+				<option value="center" >가운데</option>
+			</select> <br>
+			내용 :
 			<textarea rows="15" cols="80" placeholder="내용을 입력해주세요."
-				name="content" style="font-family: <%=fontF%>"></textarea>
+				name="content" ></textarea>
 			<br> 병원 : <select name="hospital">
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -91,7 +109,7 @@
 				<option value="c">c</option>
 			</select>
 			
-			
+			<br>
 
 			<button type="submit">글쓰기 완료</button>
 		</form>
@@ -146,4 +164,5 @@
 	<!-- Custom scripts for this template -->
 	<script src="js/clean-blog.min.js"></script>
 </body>
+
 </html>

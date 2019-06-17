@@ -54,7 +54,18 @@ li{list-style: none;}
 	box-shadow: 10px 10px gray;
 }
 
-.noti{
-	
-	
+.font_family1{
+	font-family: 돋움체;
+}
+.font_family2{
+	font-family: 궁서체;
+}
+.font_family3{
+	font-family: 굴림체;
+}
+.font_family4{
+	font-family: Courier;
+}
+.font_family5{
+	font-family: Impact;
 }
