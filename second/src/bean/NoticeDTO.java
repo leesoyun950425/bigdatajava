@@ -8,6 +8,24 @@ public class NoticeDTO {
 	private String hospital;
 	private String doctor;
 	private int unum;
+	private String font;
+	private String comment;
+	
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public String getFont() {
+		return font;
+	}
+
+	public void setFont(String font) {
+		this.font = font;
+	}
 
 	public String getTitle() {
 		return title;
@@ -68,6 +86,6 @@ public class NoticeDTO {
 	@Override
 	public String toString() {
 		return title + "," + name + "," + content + "," + time
-				+ "," + unum;
+				+ "," + unum + "," + font;
 	}
 }

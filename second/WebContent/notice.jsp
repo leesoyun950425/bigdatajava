@@ -1,3 +1,6 @@
+<%@page import="bean.NoticeDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="bean.NoticeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,6 +9,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="main.css">
+
+<link href="bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {
@@ -25,71 +30,94 @@ $(function() {
 	
 	})
 })
-
 </script>
 </head>
 <body>
 	<!-- 상단 메뉴바 -->
 	<div align="center">
 		<a href="home.jsp"><img class="logo" src="main.png" align="center"></a>
-		<div class="nav_bar">
+		<div style="height: 50px;
+	background: skyblue;">
 			<table>
 				<tr height="10px">
-					<td class="menu"><a href="resa.jsp">예약</a></td>
-					<td class="menu"><a href="notice.jsp">게시판</a></td>
-					<td class="menu"><a href="my.jsp">마이페이지</a></td>
-					<td class="menu"><a href="notice2.jsp">고객센터</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="resa.jsp">예약</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="notice.jsp?index=0">게시판</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="my.jsp">마이페이지</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="notice2.jsp?index=0">고객센터</a></td>
 				</tr>
 			</table>
 		</div>
-	<!-- 글쓰기 -->
-	<div class="notice_write">
-		<h1>게시판 글쓰기</h1>
-		<form action="noticeWriteRe.jsp">
-			제목: <input type="text" placeholder="제목을 입력해주세요." width="300"
-				size="80" name="title"> <br> 
-				글꼴 : 
-			<select id="font_familySel">
-				<option class="font_family" id="font_family1" value="dotum">돋움체</option>
-				<option class="font_family" id="font_family2" value="궁서체">궁서체</option>
-				<option class="font_family" id="font_family3" value="gulim">굴림체</option>
-				<option class="font_family" id="font_family4" value="courier">Courier</option>
-				<option class="font_family" id="font_family5" value="arial">arial</option>
-				<option class="font_family" id="font_family6" value="serif">serif</option>
-			</select> 
-			크기 : <select id="font_size">
-				<option id="font_size1" value="9px">9pt</option>
-				<option id="font_size2" value="12px">12pt</option>
-				<option id="font_size3" value="18px">18pt</option>
-				<option id="font_size4" value="24px">24pt</option>
-			</select> 
-			굵기 : <select id="font_weight">
-				<option value="normal">보통</option>
-				<option id="font_weight1" value="bold">굵게</option>
-			</select> 
-			정렬 : <select id ="font">
-				<option value="left">왼쪽</option>
-				<option value="center">가운데</option>
-				<option value="right">오른쪽</option>
-			</select> <br> 
-			내용 :
-			<textarea rows="20" cols="50" placeholder="내용을 입력해주세요."
-				name="content" id="content" ></textarea>
-			<br> 
-			병원 : <select name="hospital">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-			</select> 
-			담당의 : <select name="doctor">
-				<option value="a">a</option>
-				<option value="b">b</option>
-				<option value="c">c</option>
-			</select> 
-			<br>
-			<button type="submit">글쓰기 완료</button>
-		</form>
-	</div>
+		
+		<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<hr>
+				<form action=""></form>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item"
+						style="padding-bottom: 3px; padding-top: 3px;">
+						<table>
+							<tr>
+								<td style="font: 12px 굴림; font-weight: bold; padding-left: 200px;" >제목</td>
+								<td style="font: 12px 굴림; font-weight: bold; padding-left: 230px;">작성자</td>
+								<td style="font: 12px 굴림; font-weight: bold; padding-left: 100px;">시간</td>
+							</tr>
+						</table>
+					</li>
+					<%!int i;%>
+					<%
+						NoticeDAO dao = new NoticeDAO();
+						ArrayList<NoticeDTO> list = dao.noticeAll();
+						i=Integer.parseInt(request.getParameter("index"));
+						NoticeDTO dto2 = null;
+						while (i < list.size()) {
+							dto2 = list.get(i);
+							String info = dto2.toString();
+					%>
+						
+					<li class="list-group-item"
+						style="padding-bottom: 5px; padding-top: 5px;">
+						<table>
+							<tr>
+								<td style="font: 15px 굴림; font-weight: bold; width: 100px"><%=i + 1%></td>
+								<td style="font: 15px 굴림; font-weight: bold; width: 350px;">
+								<a href="post1.jsp?info=<%= info %>"><%=dto2.getTitle()%></a></td>
+								<td style="font: 15px 굴림; font-weight: bold; width: 130px;"><%=dto2.getName()%></td>
+								<td style="font: 15px 굴림; font-weight: bold;"><%=dto2.getTime()%></td>
+							</tr>
+						</table>
+					</li>
+
+					<%
+						i++;
+							if(i % 10 == 0 && i != 0){
+								break;
+							}
+						}
+					%>
+
+				</ul>
+				<div class="col-lg-4 col-md-10 mx-auto">
+					<ul class="pagination pagination-sm">
+						<li class="page-item"><a class="page-link" href="">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="index.jsp?index=0">1</a></li>
+						<%
+							if(list.size() % 10 !=0 && list.size() !=0 && list.size()>10){
+								int pageNum = list.size() / 10;
+								int index;
+								for(index = 1; index <= pageNum; index++){
+						%>
+						<li class="page-item"><a class="page-link" href="index.jsp?index=<%= index*10 %>"><%= index + 1 %></a></li>
+						<%
+							}
+						}%>
+						<li class="page-item"><a class="page-link" href="">Next</a></li>	
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<a href="insertPost.jsp">글쓰기</a> --%>
 
 </body>
 </html>
