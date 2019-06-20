@@ -13,9 +13,9 @@
 		<table>
 			<tr height="10px">
 				<td class="menu"><a href="resa.jsp">예약</a></td>
-				<td class="menu"><a href="notice.jsp?index=0">게시판</a></td>
+				<td class="menu"><a href="notice.jsp">게시판</a></td>
 				<td class="menu"><a href="my.jsp">마이페이지</a></td>
-				<td class="menu"><a href="notice2.jsp?index=0">고객센터</a></td>
+				<td class="menu"><a href="notice2.jsp">고객센터</a></td>
 			</tr>
 		</table>
 	</div>
