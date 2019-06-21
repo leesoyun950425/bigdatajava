@@ -8,17 +8,21 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<a href="home.jsp"><img class="logo" src="main.png" align="center"></a>
-	<div class="nav_bar">
-		<table>
-			<tr height="10px">
-				<td class="menu"><a href="resa.jsp">예약</a></td>
-				<td class="menu"><a href="notice.jsp">게시판</a></td>
-				<td class="menu"><a href="my.jsp">마이페이지</a></td>
-				<td class="menu"><a href="notice2.jsp">고객센터</a></td>
-			</tr>
-		</table>
-	</div>
+	<!-- 상단 메뉴바 -->
+	<div>
+		<a href="home.jsp"><img class="logo" src="main.png"  style="width: 50px; height: 50px; margin:0px; padding: 0px; float: left "></a>
+	<div style="height: 50px;
+	background: skyblue;">
+			<table>
+				<tr height="10px">
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="resa.jsp">예약</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="notice.jsp?index=0">게시판</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="my.jsp">마이페이지</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="notice2.jsp?index=0">고객센터</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>	
 	
 	<div class="home_main">
 	
@@ -30,8 +34,11 @@
 		</table>
 	</div>
 	<div class="login">
-		이름 : <input type="text">
-		비번 : <input type="text">
+		<form action="loginPage2.jsp">
+			이름 : <input type="text" name="name"> <br>
+			비밀번호 : <input type="password" name="pw"> <br>
+			<input type="submit" value="로그인">
+		</form>
 	</div>
 </body>
 </html>

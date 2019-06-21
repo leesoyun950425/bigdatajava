@@ -1,16 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="main.css">
+<meta charset="utf-8">
+
+<title>Clean Blog - Start Bootstrap Theme</title>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="imgtest.js"></script>
+
+
 </head>
 <body>
+
 	<!-- 상단 메뉴바 -->
 	<div align="center">
-		<a href="home.jsp"><img class="logo" src="main.png" align="center"></a>
+		<a href="home.jsp"><img class="logo" src="main.png" align="center" style="width: 300px; height: 300px; margin: 0px; margin-top: 30px"></a>
 		<div style="height: 50px;
 	background: skyblue;">
 			<table>
@@ -22,5 +32,23 @@
 				</tr>
 			</table>
 		</div>
+
+
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<form action="loginPage2.jsp">
+					이름 : <input type="text" name="name"> <br>
+					비밀번호 : <input type="password" name="pw"> <br>
+					<input type="submit" value="로그인">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+
 </body>
 </html>

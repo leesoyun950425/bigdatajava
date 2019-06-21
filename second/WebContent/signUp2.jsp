@@ -1,11 +1,21 @@
+<%@page import="bean.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+
+<title>Clean Blog - Start Bootstrap Theme</title>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="imgtest.js"></script>
+
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 	<!-- 상단 메뉴바 -->
@@ -22,5 +32,24 @@
 				</tr>
 			</table>
 		</div>
+
+
+
+	<!-- Main Content -->
+	<div class="container">
+
+		<jsp:useBean id="dto" class="bean.MemberDTO"></jsp:useBean>
+		<jsp:setProperty property="*" name="dto" />
+
+		<%
+			MemberDAO dao = new MemberDAO();
+			dao.insert(dto);
+		%>
+
+		<p>회원 가입이 완료되었습니다. 로그인 해주세요.</p>
+		<a href = "loginPage.jsp"><input type = "button" value = "메인으로"></a>
+
+	</div>
+
 </body>
 </html>

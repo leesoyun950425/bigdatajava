@@ -8,25 +8,26 @@
 .logo{
 	width: 300px;
 	height: 300px;
-	margin-top: 100px;
 	padding-bottom: 10px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 	
 }
 /* 메뉴바 */
 .menu{
 	width: 500px;
+	text-align: center;
+	padding-bottom: 9px;
+	padding-top: 5px;
 }
-a{
+
+.mainhref{
 	color: #f2f2f2;
 	font-size: 30px;
 	font-family: 굴림;
 	text-decoration: none;
 	text-align: center;
 }
-a:hover, .menu:hover{
+
+.mainhref:hover, .menu:hover{
 	background: #8db7fc;
 }
 /* 글쓰기 div */
@@ -35,9 +36,10 @@ a:hover, .menu:hover{
 }
 
 textarea{
-	resize: none;
+	width: 773px;
+	height: 566px;
 }
-/* 글씨체 */
+/* 폰트 적용  */
 #font_family1{
 	font-family: dotum;
 }
@@ -48,7 +50,7 @@ textarea{
 	font-family: gulim;
 }
 #font_family4{
-	font-family: courier;
+	font-family: cursive;
 }
 #font_family5{
 	font-family: arial;
@@ -79,18 +81,4 @@ textarea{
 .login{
 	margin-left:100px;
 	float: left;
-}
-/* comment */
-.comment_div{
-	width: 600px;
-	height: 500px;
-	background: #e8e8e8;
-}
-.comment_tb{
-	border: 2px solid red;
-}
-#comment{
-	text-align: left;
-	font-family: 궁서;
-	font-size: 12px;
 }
