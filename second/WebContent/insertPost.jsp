@@ -29,7 +29,7 @@ $(function() {
 </head>
 <body>
 	<div align="center">
-		<a href="home.jsp"><img class="logo" src="main.png" align="center" style="width: 300px; height: 300px; margin: 0px; margin-top: 30px"></a>
+		<a href="home.jsp"><img class="logo" src="main.png" align="center"></a>
 		<div style="height: 50px;
 	background: skyblue;">
 			<table>
