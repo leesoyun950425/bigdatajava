@@ -19,6 +19,26 @@ public class InfoDAO {
 	public InfoDAO() {
 		mgr = DBConnectionMgr.getInstance();
 	}
+	
+	public void insert(InfoDTO dto) {
+		try {
+			con = mgr.getConnection();
+			String sql = "insert into info values(null,?,?)";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getTitle());
+			ps.setString(2, dto.getLink());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				ps.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 	public ArrayList<InfoDTO> selectAll()  {
 		ArrayList<InfoDTO> list = new ArrayList<InfoDTO>();
@@ -33,13 +53,12 @@ public class InfoDAO {
 			
 			while (rs.next()) {
 				dto = new InfoDTO();
-				String title = rs.getString(1);
-				String link = rs.getString(2);
-				String type = rs.getString(3);
-				
+				int inum = rs.getInt(1);
+				String title = rs.getString(2);
+				String link = rs.getString(3);
+				dto.setInum(inum);
 				dto.setTitle(title);
 				dto.setLink(link);
-				dto.setType(type);
 				list.add(dto);
 			}
 			

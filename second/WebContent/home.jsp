@@ -13,7 +13,7 @@
 		$.ajax({
 			url : "infoCall.jsp",
 			success : function(result) {
-					$(".health").append(result);
+					$(".life").append(result);
 			}
 		})
 	})
@@ -47,12 +47,12 @@
 			</table>
 		</div>
 
-		<div class="health"
+		<div class="life"
 			style="width: 1000px; height: 250px; padding-top: 20px; float: left; background: pink;">
 
 
 		</div>
-		<div class="food"
+		<!-- <div class="food"
 			style="width: 1000px; height: 250px; padding-top: 20px; float: left; background: yellow">
 			<table id="foodTable" border="1">
 				<tr>
@@ -74,7 +74,7 @@
 					<td id="healthTd"><a href="#">음식1</a></td>
 				</tr>
 			</table>
-		</div>
+		</div> -->
 		<!-- 	<div class="login" style="float: left; width: 200px ; height: 300px">
 		<form action="loginPage2.jsp">
 			이름 : <input type="text" name="name"> <br>
@@ -82,7 +82,7 @@
 			<input type="submit" value="로그인">
 		</form>
 	</div> -->
-		<div class="food"
+		<!-- <div class="food"
 			style="width: 1000px; height: 250px; padding-top: 20px; float: left; background: red; margin-left: 20px">
 
 			<table id="foodTable" border="1">
@@ -105,6 +105,6 @@
 					<td id="healthTd"><a href="#">건강1</a></td>
 				</tr>
 			</table>
-		</div>
+		</div> -->
 </body>
 </html>
