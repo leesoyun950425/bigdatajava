@@ -1,4 +1,3 @@
-<%@page import="bean.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,7 +20,7 @@
 
 	<!-- 상단 메뉴바 -->
 	<div align="center">
-		<a href="home.jsp"><img class="logo" src="main.png" align="center"></a>
+		<a href="home.jsp"><img class="logo" src="main.png" align="center" style="width: 300px; height: 300px; margin: 0px; margin-top: 30px"></a>
 		<div style="height: 50px;
 	background: skyblue;">
 			<table>

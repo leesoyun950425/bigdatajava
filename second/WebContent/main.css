@@ -6,8 +6,10 @@
 }
 /* 메인로고 */
 .logo{
+	width: 300px;
+	height: 300px;
 	padding-bottom: 10px;
-	display: block;
+	
 }
 /* 메뉴바 */
 .menu{

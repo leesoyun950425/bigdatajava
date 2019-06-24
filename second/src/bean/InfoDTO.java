@@ -1,14 +1,14 @@
 package bean;
 
 public class InfoDTO {
-	private int inum;
 	private String title;
 	private String link;
-	public int getInum() {
-		return inum;
+	private String type;
+	public String getType() {
+		return type;
 	}
-	public void setInum(int inum) {
-		this.inum = inum;
+	public void setType(String type) {
+		this.type = type;
 	}
 	public String getTitle() {
 		return title;
