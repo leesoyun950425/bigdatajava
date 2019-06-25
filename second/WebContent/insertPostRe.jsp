@@ -1,3 +1,4 @@
+
 <%@page import="bean.NoticeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -8,13 +9,17 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	alert("글쓰기가 완료되었습니다!!");
-	location.href="home.jsp";
+	/* location.href="notice.jsp?index=0"; */
 </script>
 </head>
 <body>
 	<jsp:useBean id="dto" class="bean.NoticeDTO"></jsp:useBean>
 	<jsp:setProperty property="*" name="dto"/>
 	<%
+		
+
+
+	
 		NoticeDAO dao = new NoticeDAO();
 		String font1 = request.getParameter("font_family");
 		String font2 = request.getParameter("font_size");
@@ -24,6 +29,10 @@
 		dto.setFont(font);
 		dao.insert(dto);
 	%>
+	
+	 
+	
+	
 	
 </body>
 </html>

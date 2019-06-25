@@ -9,11 +9,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="main.css">
+<link href="bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+</script>
 </head>
 <body>
 	<!-- 상단 메뉴바 -->
 	<div align="center">
-		<a href="home.jsp"><img class="logo" src="main.png" align="center"></a>
+		<a href="home.jsp"><img class="logo" src="main.png" align="center" style = "width: 300px; height: 310px; margin: 0px; margin-top: 30px;"></a>
 		<div style="height: 50px;
 	background: skyblue;">
 			<table>
@@ -38,9 +42,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-				<p align="center">우리 사이트에 대한 불편사항이나 문의사항, 건의사항 등이 있다면 글을 작성해주세요.</p>
-				<form action="write.html">
-					<button type="submit" onclick="write.html">글 작성</button>
+				<p align="center" style="margin-top: 30px;">우리 사이트에 대한 불편사항이나 문의사항, 건의사항 등이 있다면 글을 작성해주세요.</p><br>
+				<form action="insertPost.jsp">
+					<button type="submit" style="float: left">글 작성</button><br><br>
+					<input type="hidden" name = "nullDoctor" value="true">
 				</form>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"
@@ -72,10 +77,10 @@
 						style="padding-bottom: 5px; padding-top: 5px;">
 						<table>
 							<tr>
-								<td style="font: 12px 굴림; font-weight: bold; width: 100px"><%=i + 1%></td>
-								<td style="font: 12px 굴림; font-weight: bold; width: 350px;"><a
+								<td style="font: 12px 굴림; font-weight: bold; width: 100px; padding-left:30px;"><%=i + 1%></td>
+								<td style="font: 12px 굴림; font-weight: bold; width: 350px; "><a
 									href="post2.jsp?info=<%=info%>"><%=conDto.getTitle()%></a></td>
-								<td style="font: 12px 굴림; font-weight: bold; width: 130px;"><%=conDto.getName()%></td>
+								<td style="font: 12px 굴림; font-weight: bold; width: 130px; padding-left: 5px;"><%=conDto.getName()%></td>
 								<td style="font: 12px 굴림; font-weight: bold;"><%=conDto.getTime()%></td>
 							</tr>
 						</table>

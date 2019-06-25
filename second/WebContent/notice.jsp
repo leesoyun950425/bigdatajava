@@ -9,11 +9,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="main.css">
-
 <link href="bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
-$(function() {
+/* $(function() {
 	$("#font_familySel").on("change",function() {
 		$("textarea").css("font-family",$(this).val());
 	})
@@ -29,13 +28,13 @@ $(function() {
 		$("textarea").css("text-align",$(this).val());
 	
 	})
-})
+}) */
 </script>
 </head>
 <body>
 	<!-- 상단 메뉴바 -->
 	<div align="center">
-		<a href="home.jsp"><img class="logo" src="main.png" align="center"></a>
+		<a href="home.jsp"><img class="logo" src="main.png" align="center" style = "width: 300px; height: 310px; margin: 0px; margin-top: 30px;"></a>
 		<div style="height: 50px;
 	background: skyblue;">
 			<table>
@@ -48,11 +47,17 @@ $(function() {
 			</table>
 		</div>
 		
+		<!-- DTO 불러오기 -->
+	<jsp:useBean id="dto" class="bean.NoticeDTO"></jsp:useBean>
+	<jsp:setProperty property="*" name="dto" />
+		
 		<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-				<hr>
-				<form action=""></form>
+				<form action="insertPost.jsp">
+					<button type="submit" style="float: left">글 작성</button><br><br>
+					<input type="hidden" name = "nullDoctor" value="false">
+				</form>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"
 						style="padding-bottom: 3px; padding-top: 3px;">
@@ -79,11 +84,11 @@ $(function() {
 						style="padding-bottom: 5px; padding-top: 5px;">
 						<table>
 							<tr>
-								<td style="font: 15px 굴림; font-weight: bold; width: 100px"><%=i + 1%></td>
-								<td style="font: 15px 굴림; font-weight: bold; width: 350px;">
+								<td style="font: 12px 굴림; font-weight: bold; width: 100px"><%=i + 1%></td>
+								<td style="font: 12px 굴림; font-weight: bold; width: 350px;">
 								<a href="post1.jsp?info=<%= info %>"><%=dto2.getTitle()%></a></td>
-								<td style="font: 15px 굴림; font-weight: bold; width: 130px;"><%=dto2.getName()%></td>
-								<td style="font: 15px 굴림; font-weight: bold;"><%=dto2.getTime()%></td>
+								<td style="font: 12px 굴림; font-weight: bold; width: 130px;"><%=dto2.getName()%></td>
+								<td style="font: 12px 굴림; font-weight: bold;"><%=dto2.getTime()%></td>
 							</tr>
 						</table>
 					</li>
@@ -100,14 +105,14 @@ $(function() {
 				<div class="col-lg-4 col-md-10 mx-auto">
 					<ul class="pagination pagination-sm">
 						<li class="page-item"><a class="page-link" href="">Previous</a></li>
-						<li class="page-item"><a class="page-link" href="index.jsp?index=0">1</a></li>
+						<li class="page-item"><a class="page-link" href="notice.jsp?index=0">1</a></li>
 						<%
 							if(list.size() % 10 !=0 && list.size() !=0 && list.size()>10){
 								int pageNum = list.size() / 10;
 								int index;
 								for(index = 1; index <= pageNum; index++){
 						%>
-						<li class="page-item"><a class="page-link" href="index.jsp?index=<%= index*10 %>"><%= index + 1 %></a></li>
+						<li class="page-item"><a class="page-link" href="notice.jsp?index=<%= index*10 %>"><%= index + 1 %></a></li>
 						<%
 							}
 						}%>
@@ -117,7 +122,7 @@ $(function() {
 			</div>
 		</div>
 		<hr>
-		<a href="insertPost.jsp">글쓰기</a> --%>
+	
 
 </body>
 </html>

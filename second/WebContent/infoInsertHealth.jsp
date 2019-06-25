@@ -12,6 +12,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
+/* 운동정보 넣기 */
 	$(function() {
 		$.ajax({
 					url : " https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fhealth.chosun.com%2Fsite%2Fdata%2Frss%2Frss.xml&api_key=bz2svcxkn5d3bta7sty7cwzi0cdinpnomn9o5nle",
