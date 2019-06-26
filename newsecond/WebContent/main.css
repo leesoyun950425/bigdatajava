@@ -1,0 +1,81 @@
+/* 메인화면 상단 바 메뉴 */
+#top{
+	text-align: center;
+	padding-left: 100px;
+}
+#topMenu{
+	height: 30px;
+	width: 1800px;
+}
+#topMenu ul li{
+	list-style: none;
+	float: left; 
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+}
+#topMenu li{
+	width: 150px;
+	margin-left: 100px;
+}
+#topMenu #menuLink{
+	text-decoration: none;
+	display: block;
+}
+#home:hover{
+	src: "home.png";
+}
+/* 홈화면 정보  */
+.btnGroup{
+	float: right;
+	padding-right: 30px;
+}
+.life{
+	padding-left: 20px;
+}
+/*글쓰기 div*/
+.notice_write{
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 800px;
+}
+/* 폰트 적용  */
+#font_family1{
+	font-family: dotum;
+}
+#font_family2{
+	font-family: 고딕;
+}
+#font_family3{
+	font-family: gulim;
+}
+#font_family4{
+	font-family: cursive;
+}
+#font_family5{
+	font-family: arial;
+}
+#font_family6{
+	font-family: serif;
+}
+#font_size1{
+	font-size: 9px;
+}
+#font_size2{
+	font-size: 12px;
+}
+#font_size3{
+	font-size: 18px;
+}
+#font_size4{
+	font-size: 24px;
+}
+#font_weight1{
+	font-weight: bold;
+}
+/*chart div*/
+.chart{
+	text-align: center;
+}
