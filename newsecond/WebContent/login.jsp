@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="main.css">
@@ -28,7 +30,7 @@
 				<li><a href="notice.jsp?index=0" id="menuLink"><img
 						src="img/notice2.png" onmouseover="this.src='img/notice.png'"
 						onmouseout="this.src='img/notice2.png'"></a></li>
-				<li><a href="contact.jsp?index=0" id="menuLink"><img
+				<li><a href="contact.jsp?index=0 " id="menuLink"><img
 						src="img/contact2.png" onmouseover="this.src='img/contact.png'"
 						onmouseout="this.src='img/contact2.png'"></a></li>
 				<li><a href="chart.jsp" id="menuLink"><img
@@ -45,15 +47,23 @@
 	<nav
 		class="navbar navbar-expand-sm bg-success navbar-dark justify-content-center">
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a>
-			</li>
+			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
 			<li class="nav-item"><a class="nav-link" href="signUp.jsp">회원가입</a></li>
 		</ul>
 	</nav>
-
 	<br>
-	<br>
-
+	<!-- 로그인 폼 -->
+	<div id="login">
+		<h1>로그인</h1>
+		<h4>홈페이지의 다양한 정보와 맞춤 서비스를 이용하시려면 로그인이 필요합니다.</h4>
+		<div id="loginForm">
+			Name: <input type="text" class="form-control" id="name" name="name">
+			PW: <input type="text" class="form-control" id="pw" name="pw"
+				style="margin-bottom: 20px">
+			<button type="button" class="btn btn-outline-success"
+				style="margin-left: 10px">로그인</button>
+		</div>
+	</div>
 	<!-- 챗봇 -->
 	<script>
 		(function(d, s, id) {

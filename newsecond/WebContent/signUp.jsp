@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<a href="homemain.jsp"><img src="img/logo.jpeg"
-		style="width: 300px; height: 150px; text-align: center; display: block; margin: 0px auto;"></a>
 	<!-- 상단 메뉴바 -->
 	<div id="top">
 		<nav id="topMenu">
@@ -28,7 +28,7 @@
 				<li><a href="notice.jsp?index=0" id="menuLink"><img
 						src="img/notice2.png" onmouseover="this.src='img/notice.png'"
 						onmouseout="this.src='img/notice2.png'"></a></li>
-				<li><a href="contact.jsp?index=0" id="menuLink"><img
+				<li><a href="contact.jsp?index=0 " id="menuLink"><img
 						src="img/contact2.png" onmouseover="this.src='img/contact.png'"
 						onmouseout="this.src='img/contact2.png'"></a></li>
 				<li><a href="chart.jsp" id="menuLink"><img
@@ -45,15 +45,28 @@
 	<nav
 		class="navbar navbar-expand-sm bg-success navbar-dark justify-content-center">
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a>
-			</li>
+			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
 			<li class="nav-item"><a class="nav-link" href="signUp.jsp">회원가입</a></li>
 		</ul>
 	</nav>
-
 	<br>
-	<br>
-
+	<!-- 회원가입 폼 -->
+	<div id="signUp">
+		<h1>회원가입</h1>
+		<h4>홈페이지의 회원이 되시면 다양한 정보와 맞춤 서비스를 이용하실 수 있습니다.</h4>
+		<div id="signUpForm" style="text-align: left;">
+		이름 : <input type="text" class="form-control input-sm" placeholder="Name" style="margin-bottom: 10px">
+		비밀번호 : <input type="text" class="form-control input-sm" placeholder="Pw" style="margin-bottom: 10px">
+		나이 : <input type="text" class="form-control input-sm" placeholder="age" style="margin-bottom: 10px">
+		성별 :  <input type="radio" class="form-check-input-lg" name="man" style="margin-left: 50px">남자 
+		  <input type="radio" class="form-check-input-lg" name="woman" style="margin-left: 60px">여자 <br><br>
+		전화번호 : <input type="text" class="form-control input-sm" placeholder="tel" style="margin-bottom: 10px">
+		주소 : <input type="text" class="form-control input-sm" placeholder="addr" style="margin-bottom: 10px">
+		<button type="button" class="btn btn-outline-success"
+				style="margin-left: 140px">회원가입완료</button>
+		</div>
+	</div>
+	
 	<!-- 챗봇 -->
 	<script>
 		(function(d, s, id) {
@@ -71,6 +84,8 @@
 	<div id="frogue-container" class="position-right-bottom"
 		data-chatbot="dfe8c896-af87-4447-882e-bf1e2383f8ba" data-user="사용자ID"
 		data-init-key="value"></div>
+
+	
 
 </body>
 </html>
