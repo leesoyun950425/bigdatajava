@@ -10,7 +10,25 @@ public class NoticeDTO {
 	private int unum;
 	private String font;
 	private String comment;
+	private String commentName;
+	private String commentTime;
 	
+	public String getCommentName() {
+		return commentName;
+	}
+
+	public void setCommentName(String commentName) {
+		this.commentName = commentName;
+	}
+
+	public String getCommentTime() {
+		return commentTime;
+	}
+
+	public void setCommentTime(String commentTime) {
+		this.commentTime = commentTime;
+	}
+
 	public String getComment() {
 		return comment;
 	}
@@ -85,10 +103,6 @@ public class NoticeDTO {
 	@Override
 	public String toString() {
 		return title + "," + name + "," + content + "," + time
-				+ "," + unum + "," + font+","+comment;
-	}
-	public String toString2() {
-		return title + "," + name + "," + content + "," + time
-				+ "," +hospital+","+doctor+","+ unum + "," + font+","+comment;
+				+ "," + unum + "," + font;
 	}
 }

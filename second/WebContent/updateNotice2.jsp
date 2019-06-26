@@ -17,11 +17,9 @@ $(function() {
 	})
 	$("#font_size").on("change", function() {
 		$("textarea").css("font-size", $(this).val());
-
 	})
 	$("#font_weight").on("change", function() {
 		$("textarea").css("font-weight", $(this).val());
-
 	})
 	$("#font").on("change", function() {
 		$("textarea").css("text-align", $(this).val());

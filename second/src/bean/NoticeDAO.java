@@ -77,14 +77,14 @@ public class NoticeDAO {
          }
 
       } catch (Exception e) {
-         System.out.println("DB泥섎━�뿉�윭");
+         System.out.println("DB처리에러");
       } finally {
          try {
             rs.close();
             ps.close();
             con.close();
          } catch (SQLException e) {
-            System.out.println("�옄�썝�빐�젣�뿉�윭");
+            System.out.println("자원해제에러");
          }
       }
       return dto;
@@ -141,7 +141,7 @@ public class NoticeDAO {
             ps.close();
             con.close();
          } catch (SQLException e) {
-            System.out.println("�옄�썝�빐�젣�뿉�윭");
+            System.out.println("자원해제에러");
          }
       }
    }
@@ -199,7 +199,7 @@ public class NoticeDAO {
 
       } catch (Exception e) {
 
-         System.out.println("DB泥섎━ 以� �뿉�윭 諛쒖깮");
+         System.out.println("DB처리 중 에러 발생");
 
       } finally {
 
@@ -213,7 +213,7 @@ public class NoticeDAO {
 
          } catch (SQLException e) {
 
-            System.out.println("�옄�썝 �빐�젣 以� �뿉�윭 諛쒖깮");
+            System.out.println("자원 해제 중 에러 발생");
 
          }
       }
@@ -261,14 +261,14 @@ public class NoticeDAO {
             }
          }
       } catch (Exception e) {
-         System.out.println("DB泥섎━ 以� �뿉�윭 諛쒖깮");
+         System.out.println("DB처리 중 에러 발생");
       } finally {
          try {
             rs.close();
             ps.close();
             con.close();
          } catch (SQLException e) {
-            System.out.println("�옄�썝 �빐�젣 以� �뿉�윭 諛쒖깮");
+            System.out.println("자원 해제 중 에러 발생");
          }
       }
       return list;
@@ -277,15 +277,15 @@ public class NoticeDAO {
 	   try {
 	         con = mgr.getConnection();
 
-	         String sql = "update notice set title = ?,content = ?,font = ? where  title = ? and content = ? and time = ? and name=?";
+	         String sql = "update notice set title = ?,content = ?,font = ? where title = ? and content = ? and time = ? and name=?";
 	         ps = con.prepareStatement(sql);
 	         ps.setString(1, dto.getTitle());
 	         ps.setString(2, dto.getContent());
 	         ps.setString(3, dto.getFont());
-	         ps.setString(4, dto2.getTitle());
-	         ps.setString(5, dto2.getContent());
-	         ps.setString(6, dto2.getTime());
-	         ps.setString(7, dto2.getName());
+	         ps.setString(4, dto.getTitle());
+	         ps.setString(5, dto.getContent());
+	         ps.setString(6, dto.getTime());
+	         ps.setString(7, dto.getName());
 
 	         ps.executeUpdate();
 	      } catch (Exception e) {
@@ -295,7 +295,7 @@ public class NoticeDAO {
 	            ps.close();
 	            con.close();
 	         } catch (SQLException e) {
-	            System.out.println("�옄�썝�빐�젣�뿉�윭");
+	            System.out.println("자원해제에러");
 	         }
 	      }
 	   }
