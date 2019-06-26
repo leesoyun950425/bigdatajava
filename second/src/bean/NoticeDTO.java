@@ -82,10 +82,13 @@ public class NoticeDTO {
 	public void setUnum(int unum) {
 		this.unum = unum;
 	}
-
 	@Override
 	public String toString() {
 		return title + "," + name + "," + content + "," + time
-				+ "," + unum + "," + font;
+				+ "," + unum + "," + font+","+comment;
+	}
+	public String toString2() {
+		return title + "," + name + "," + content + "," + time
+				+ "," +hospital+","+doctor+","+ unum + "," + font+","+comment;
 	}
 }

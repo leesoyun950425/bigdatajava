@@ -135,7 +135,9 @@
 					<input type = "hidden" name="info" value = "<%= info %>"><!-- 삭제하기 위해 hidden타입에 info를 넘김 -->
 					<button type = "submit">삭제</button>
 				</form>
-				<form action ="updatePost.jsp">
+				<form action ="updateNotice2.jsp">
+					<input type="hidden" name="nullDoctor" value="true">
+					<input type="hidden" name="info" value="<%=info%>"><!-- 수정하기 위해 hidden타입에 info를 넘김 -->
 					<button type = "submit">수정</button>
 				</form>
 			</div>

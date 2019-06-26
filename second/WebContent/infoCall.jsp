@@ -10,15 +10,9 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title> -->
-<link rel="stylesheet" type="text/css" href="main.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
-$(function() {
-	idx = 0;
-	var data = "";
-	
-})
 </script>
 
 	<jsp:useBean id="dto" class="bean.InfoDTO"></jsp:useBean>
@@ -42,11 +36,12 @@ $(function() {
 		</tr>
 		
 		<%
+		
 		for(int i =0; i< rNum.length; i++){
 				dto = list.get(rNum[i]); 
 			%>
 		<tr>
-			<td><a id="infoA" style="text-decoration: none; color: black;" href="<%= dto.getLink() %>"><%= dto.getTitle() %><%= dto.getInum() %></a></td>
+			<td><a href="<%= dto.getLink() %>"><%= dto.getTitle() %><%= dto.getInum() %></a></td>
 		</tr>
 	<%
 		}

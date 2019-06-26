@@ -8,7 +8,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {
+	if ($("#nullDoctor").val() == "true") {
 		$("#doctor").empty();
+	} else {
+	}
 	$("#font_familySel").on("change", function() {
 		$("textarea").css("font-family", $(this).val());
 	})
@@ -37,7 +40,7 @@ $(function() {
 <%
 		String info = request.getParameter("info");//선택한 게시물의 dto를 toString() 한것
 		String[] info2 = info.split(",");// title,content~ 등으로 나눈것
-		String[] fonts = info2[7].split(":"); //font를 나눈것
+		String[] fonts = info2[5].split(":"); //font를 나눈것
 	%>
 	<div class="notice_write">
 		<h1>게시판 수정하기</h1>

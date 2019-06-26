@@ -12,23 +12,7 @@
 <link href="bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
-/* $(function() {
-	$("#font_familySel").on("change",function() {
-		$("textarea").css("font-family",$(this).val());
-	})
-	$("#font_size").on("change",function() {
-		$("textarea").css("font-size",$(this).val());
-	
-	})
-	$("#font_weight").on("change",function() {
-		$("textarea").css("font-weight",$(this).val());
-	
-	})
-	$("#font").on("change",function() {
-		$("textarea").css("text-align",$(this).val());
-	
-	})
-}) */
+
 </script>
 </head>
 <body>
@@ -77,7 +61,7 @@
 						NoticeDTO dto2 = null;
 						while (i < list.size()) {
 							dto2 = list.get(i);
-							String info = dto2.toString();
+							String info = dto2.toString2();
 					%>
 						
 					<li class="list-group-item"

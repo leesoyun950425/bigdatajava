@@ -12,17 +12,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$.ajax({
-			url : "infoCall.jsp",
-			data : {
-				"idx" : 0,
-				"data" : $("#idnum").val() 
-			},
-			dataType:"html",
-			success : function(result) {
-					$(".life").html(result);
-			}
-		})
 		$(".btn").click(function() {
 			alert("ok");
 			var btn = $(this).val();
@@ -31,6 +20,7 @@
 			case "life" :
 				idx = 0;
 				data = $("#idnum").val();
+				alert(data);
 				break;
 			case "health" :
 				idx = 30;
@@ -44,6 +34,7 @@
 						data+= intssss[i]+",";
 					}
 				}
+				alert(data);
 				break;
 			case "doctor" :
 				idx = 60;
@@ -57,6 +48,7 @@
 						data+= intssss[i]+",";
 					}
 				}
+				alert(data);
 				break;
 			}
 		$.ajax({
@@ -66,7 +58,8 @@
 			},
 			dataType:"html",
 			success : function(result) {
-					$(".life").html(result);
+					/* $(".life").append(result); */
+					$("#test").html(result);
 			}
 		})
 	})
@@ -157,7 +150,7 @@
 	<button class="btn" value="doctor">의료기술</button>
 	<!-- 정보 테이블 불러올 div -->
 		<div class="life"
-			style="width: 1000px; height: 250px; padding-top: 20px; float: left; background: white;">
+			style="width: 1000px; height: 250px; padding-top: 20px; float: left; background: pink;">
 		</div>
 </body>
 </html>

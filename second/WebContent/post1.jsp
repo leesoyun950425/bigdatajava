@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -62,35 +63,24 @@
 </head>
 <body>
 	<!-- 상단 메뉴바 -->
-	<div align="center">
-		<a href="home.jsp"><img class="logo" src="main.png" align="center" style="width: 300px; height: 300px; margin: 0px; margin-top: 30px"></a>
-		<div style="height: 50px; background: skyblue;">
+	<center><div>
+		<a href="home.jsp"><img class="logo" src="main.png" align="center" style = "width: 300px; height: 300px; margin: 0px; margin-top: 30px;"></a>
+		<div style="height: 50px;
+	background: skyblue;">
 			<table>
 				<tr height="10px">
-					<td
-						style="width: 500px; text-align: center; padding-bottom: 9px; padding-top: 5px;"><a
-						style="color: #f2f2f2; font-size: 30px; font-family: 굴림; text-decoration: none; text-align: center;"
-						href="resa.jsp">예약</a></td>
-					<td
-						style="width: 500px; text-align: center; padding-bottom: 9px; padding-top: 5px;"><a
-						style="color: #f2f2f2; font-size: 30px; font-family: 굴림; text-decoration: none; text-align: center;"
-						href="notice.jsp?index=0">게시판</a></td>
-					<td
-						style="width: 500px; text-align: center; padding-bottom: 9px; padding-top: 5px;"><a
-						style="color: #f2f2f2; font-size: 30px; font-family: 굴림; text-decoration: none; text-align: center;"
-						href="my.jsp">마이페이지</a></td>
-					<td
-						style="width: 500px; text-align: center; padding-bottom: 9px; padding-top: 5px;"><a
-						style="color: #f2f2f2; font-size: 30px; font-family: 굴림; text-decoration: none; text-align: center;"
-						href="notice2.jsp?index=0">고객센터</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="resa.jsp">예약</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="notice.jsp?index=0">게시판</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="my.jsp">마이페이지</a></td>
+					<td style="width: 500px;text-align: center;padding-bottom: 9px;padding-top: 5px;"><a style="color: #f2f2f2;font-size: 30px;font-family: 굴림;text-decoration: none;text-align: center;" href="notice2.jsp?index=0">고객센터</a></td>
 				</tr>
 			</table>
-		</div>
-		
+		</div></center>
+<!-- 게시글 불러오기 -->
 	<%
 		String info = request.getParameter("info");
 		String[] info2 = info.split(",");
-		String[] fonts = info2[5].split(":");
+		String[] fonts = info2[7].split(":");
 	%>
 	<div class = "container" style="display: block; margin-left: auto;margin-right: auto;">
 		<div class="row" style="">
@@ -123,6 +113,14 @@
 					 		</tr>
 					 	</table>
 					 </li>
+					 <li class="list-group-item">
+					 	<table>
+					 		<tr>
+					 			<td id = "hospital">병원 : <%= info2[4] %></td>
+					 			<td id = "doctor">담당의 : <%= info2[5] %></td>
+					 		</tr>
+					 	</table>
+					 </li>
 				</ul>
 				<br>
 				<div id="commentDiv"style="background: gray; border: 2px; width: 800px; height: 200px; position: relative;">
@@ -141,7 +139,9 @@
 					<input type = "hidden" name="info" value = "<%= info %>">
 					<button type = "submit">삭제</button>
 				</form>
-				<form action ="updatePost.jsp">
+				<form action ="updateNotice.jsp">
+					<input type="hidden" name="nullDoctor" value="false">
+					<input type="hidden" name="info" value="<%=info%>"><!-- 수정하기 위해 hidden타입에 info를 넘김 -->
 					<button type = "submit">수정</button>
 				</form>
 			</div>

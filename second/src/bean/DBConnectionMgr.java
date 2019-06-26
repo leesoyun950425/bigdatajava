@@ -166,11 +166,15 @@ public class DBConnectionMgr {
         }
     }
 
-	/*
-	 * public void freeConnection(Connection c, Statement s, ResultSet r) { try { if
-	 * (r != null) r.close(); if (s != null) s.close(); freeConnection(c); } catch
-	 * (SQLException e) { e.printStackTrace(); } }
-	 */
+    public void freeConnection(Connection c, Statement s, ResultSet r) {
+        try {
+            if (r != null) r.close();
+            if (s != null) s.close();
+            freeConnection(c);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void freeConnection(Connection c, PreparedStatement p) {
         try {
@@ -181,11 +185,14 @@ public class DBConnectionMgr {
         }
     }
 
-	/*
-	 * public void freeConnection(Connection c, Statement s) { try { if (s != null)
-	 * s.close(); freeConnection(c); } catch (SQLException e) { e.printStackTrace();
-	 * } }
-	 */
+    public void freeConnection(Connection c, Statement s) {
+        try {
+            if (s != null) s.close();
+            freeConnection(c);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     /** Marks a flag in the ConnectionObject to indicate this connection is no longer in use */
     public synchronized void removeConnection(Connection c) {
