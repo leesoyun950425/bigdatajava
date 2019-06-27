@@ -45,13 +45,26 @@
 	<br>
 	<br>
 	<!-- 로그인 nav바 -->
-	<nav
+		<nav
 		class="navbar navbar-expand-sm bg-success navbar-dark justify-content-center">
+		<%
+			String name = (String)session.getAttribute("name");
+			String pw = (String)session.getAttribute("password");
+			if(name == null){
+		%>
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a>
-			</li>
+			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
 			<li class="nav-item"><a class="nav-link" href="signUp.jsp">회원가입</a></li>
 		</ul>
+		<%
+			}else{
+			%>
+			<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="logout.jsp">로그아웃</a></li>
+			</ul>
+		<%	
+			}
+		%>
 	</nav>
 	<br>
 	<br>
@@ -152,6 +165,7 @@
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'frogue-embed'));
 		</script>
+
 
 		<div id="frogue-container" class="position-right-bottom"
 			data-chatbot="dfe8c896-af87-4447-882e-bf1e2383f8ba" data-user="사용자ID"

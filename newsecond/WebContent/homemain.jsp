@@ -22,6 +22,7 @@
 			}
 		})
 		$(".btn").click(function() {
+			location.href="homemain.jsp";
 			var btn = $(this).val();
 			var data = "";
 			switch (btn) {
@@ -108,10 +109,24 @@
 	<!-- 로그인 nav바 -->
 	<nav
 		class="navbar navbar-expand-sm bg-success navbar-dark justify-content-center">
+		<%
+			String name = (String)session.getAttribute("name");
+			String pw = (String)session.getAttribute("password");
+			if(name == null){
+		%>
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">회원가입</a></li>
+			<li class="nav-item"><a class="nav-link" href="signUp.jsp">회원가입</a></li>
 		</ul>
+		<%
+			}else{
+			%>
+			<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="logout.jsp">로그아웃</a></li>
+			</ul>
+		<%	
+			}
+		%>
 	</nav>
 
 	<br>
@@ -174,8 +189,7 @@
 		<button value="doctor" class="btn btn-outline-success">의료기술</button>
 	</div>
 	<!-- 정보 테이블 불러올 div -->
-	<div class="life"
-		style="width: 1000px; height: 250px; padding-top: 20px; float: left; background: white;">
+	<div class="life">
 	</div>
 
 	<!-- 챗봇 -->
@@ -192,9 +206,9 @@
 		}(document, 'script', 'frogue-embed'));
 	</script>
 
+
 	<div id="frogue-container" class="position-right-bottom"
 		data-chatbot="dfe8c896-af87-4447-882e-bf1e2383f8ba" data-user="사용자ID"
 		data-init-key="value"></div>
-
 </body>
 </html>

@@ -46,10 +46,17 @@
 	<!-- 로그인 nav바 -->
 	<nav
 		class="navbar navbar-expand-sm bg-success navbar-dark justify-content-center">
+		<%
+			String name = (String)session.getAttribute("name");
+			if(name == null){
+		%>
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
 			<li class="nav-item"><a class="nav-link" href="signUp.jsp">회원가입</a></li>
 		</ul>
+		<%
+			}		
+		%>
 	</nav>
 	<br>
 	<!-- 로그인 폼 -->
@@ -57,11 +64,13 @@
 		<h1>로그인</h1>
 		<h4>홈페이지의 다양한 정보와 맞춤 서비스를 이용하시려면 로그인이 필요합니다.</h4>
 		<div id="loginForm">
-			Name: <input type="text" class="form-control" id="name" name="name">
-			PW: <input type="text" class="form-control" id="pw" name="pw"
-				style="margin-bottom: 20px">
-			<button type="button" class="btn btn-outline-success"
-				style="margin-left: 10px">로그인</button>
+			<form action="login2.jsp">
+				Name: <input type="text" class="form-control" id="name" name="name">
+				PW: <input type="password" class="form-control" id="pw" name="pw"
+					style="margin-bottom: 20px">
+				<button type="submit" class="btn btn-outline-success"
+					style="margin-left: 10px">로그인</button>
+			</form>
 		</div>
 	</div>
 	<!-- 챗봇 -->

@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	alert("글쓰기가 완료되었습니다!!");
-	/* location.href="notice.jsp?index=0"; */
+	history.go(-2);
 </script>
 </head>
 <body>

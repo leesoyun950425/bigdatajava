@@ -1,3 +1,4 @@
+<%@page import="bean.ResaDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -28,6 +29,7 @@
 			$("textarea").css("text-align", $(this).val());
 
 		})
+
 		/* $("#filefile").change(function() {
 			$("#filename").val($("#filefile").val());
 			var s2 = $("#filename").val();
@@ -92,13 +94,33 @@
 	<!-- 로그인 nav바 -->
 	<nav
 		class="navbar navbar-expand-sm bg-success navbar-dark justify-content-center">
+		<%
+			String name = (String)session.getAttribute("name");
+			String pw = (String)session.getAttribute("password");
+			if(name == null){
+		%>
 		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">회원가입</a></li>
+			<li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
+			<li class="nav-item"><a class="nav-link" href="signUp.jsp">회원가입</a></li>
 		</ul>
+		<%
+			}else{
+			%>
+			<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="logout.jsp">로그아웃</a></li>
+			</ul>
+		<%	
+			}
+		%>
 	</nav>
 
 	<br>
+	<%
+
+		if (name == null ) {
+			response.sendRedirect("login.jsp");
+		}else{
+	%>
 	<!-- 글쓰기 -->
 	<div class="notice_write">
 		<h1 align="center">게시판 글쓰기</h1>
@@ -133,8 +155,9 @@
 					<!-- 파일이름들어가는공간 -->
 					<!-- <input type="hidden" value="" id="filename" name = "filename"> -->
 				</select> <br>
-				<textarea class="form-control" rows="20" cols="50" placeholder="내용을 입력해주세요."
-					name="content" id="content" style="width: 773px; height: 566px;"></textarea>
+				<textarea class="form-control" rows="20" cols="50"
+					placeholder="내용을 입력해주세요." name="content" id="content"
+					style="width: 773px; height: 566px;"></textarea>
 				<!-- <div id="content"  contentEditable="true" style="text-align:left; overflow-x:auto; width:500px; height: 300px; border: solid; 1px; margin: 20px; line-height: 20px; "> </div> -->
 				<!-- 넘길내용 -->
 				<!-- <input type="hidden"name="content" id="content2"> -->
@@ -161,5 +184,24 @@
 			</center>
 		</form>
 	</div>
+<%} %>
+	<!-- 챗봇 -->
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https:\/\/danbee.ai/js/plugins/frogue-embed/frogue-embed.min.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'frogue-embed'));
+	</script>
+
+
+	<div id="frogue-container" class="position-right-bottom"
+		data-chatbot="dfe8c896-af87-4447-882e-bf1e2383f8ba" data-user="사용자ID"
+		data-init-key="value"></div>
 </body>
 </html>

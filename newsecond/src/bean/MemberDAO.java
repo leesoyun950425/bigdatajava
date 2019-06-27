@@ -3,7 +3,8 @@ package bean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import javax.websocket.Session;
 
 public class MemberDAO {
 
@@ -20,6 +21,28 @@ public class MemberDAO {
 		pool = DBConnectionMgr.getInstance();
 	}
 
+	public int getUnum(String id, String pw) throws Exception {
+		
+		con = pool.getConnection();
+		
+		String sql = "select unum from member where name = ? and pw = ?";
+		
+		int tmpUnum = 0;
+		
+		ps = con.prepareStatement(sql);
+		ps.setString(1, id);
+		ps.setString(2, pw);
+		
+		rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			tmpUnum = rs.getInt(1);
+		}
+		
+		return tmpUnum;
+	}
+	
+	
 //	notice에 글쓴이를 기준으로 자신이 쓴 글을 찾아오는 DAO작성
 
 	public void Questioninsert(String id, int [] value) throws Exception {
@@ -243,9 +266,7 @@ public class MemberDAO {
 		rs = ps.executeQuery();
 
 		if (rs.next() == true) {
-			System.out.println("����");
 		} else {
-			System.out.println("����");
 		}
 
 		rs.close();
@@ -254,42 +275,52 @@ public class MemberDAO {
 
 	}
 
-	public String resacall(String id, String pw) throws Exception {
+	public ResaDTO resacall(String id, String pw) throws Exception {
 
 		con = pool.getConnection();
 
 		String sql = "select * from resa where name = ? and pw = ?";
 
-		String hospital = null;
-		String address = null;
-		String body = null;
-		String doctor = null;
-		String date = null;
-		String price = null;
-
+		ResaDTO dto = null;
 		ps = con.prepareStatement(sql);
 
+		
 		ps.setString(1, id);
 		ps.setString(2, pw);
+	
 
 		rs = ps.executeQuery();
 
-		if (rs.next()) {
-			while (rs.next()) {
-				hospital = rs.getString(2);
-				address = rs.getString(3);
-				body = rs.getString(4);
-				doctor = rs.getString(5);
-				date = rs.getString(6);
-				price = rs.getString(7);
-			}
+		while(rs.next()) {
+				dto = new ResaDTO();
+				String hospital = rs.getString(2);
+				String address = rs.getString(3);
+				String body = rs.getString(4);
+				String doctor = rs.getString(5);
+				String date = rs.getString(6);
+				String price = rs.getString(7);
+				dto.setName(id);
+				dto.setHospital(hospital);
+				dto.setAddress(address);
+				dto.setBody(body);
+				dto.setDoctor(doctor);
+				dto.setDate(date);
+				dto.setPrice(price);
 		}
+		/* String[] yeyakDay = dto.getDate().split("-"); */
+		
+		
+		/*
+		 * if(yeyakDay[1].equals(todayMonth)) {//calendar객체의 이번달
+		 * if(yeyakDay[2].equals(todayDate)) { if(yeyakDay[3].equals(todayHour)) {
+		 * return null; } } }
+		 */
 
 		rs.close();
 		ps.close();
 		con.close();
-
-		return hospital + "," + address + "," + body + "," + doctor + "," + date + "," + price;
+		
+		return dto;
 	}
 
 }
