@@ -88,11 +88,9 @@
 			String info = dao.select(id, pw);
 			String[] infoArray = info.split(" ");
 
-			 ResaDTO dto2 = dao.resacall(id, pw2);
-			
+			ResaDTO dto2 = dao.resacall(id, pw2);
 		%>
 		<!-- name + " " + pw + " " + age + " " + gender + " " + tel + " " + unum + " " + addr -->
-		<%= dao.resacall(id,pw2) %>
 		<table class="table table-striped">
 			<tr>
 				<td>이름</td>
@@ -119,28 +117,25 @@
 				<td><%=infoArray[6]%></td>
 			</tr>
 		</table>
-		
 
-		<button type="button" class="btn btn-light">
-			<a href="my.jsp" style="color: green;">내 정보 보기</a>
-		</button>
-		<button type="button" class="btn btn-light">
-			<a href="myUpdate.jsp" style="color: green">내 정보 수정</a>
-		</button>
-		<button type="button" class="btn btn-light">
-			<a href="myDelete.jsp" style="color: green">회원 탈퇴</a>
-		</button>
-		<button type="button" class="btn btn-light">
-			<a href="questionPage.jsp" style="color: green">이용자 만족도 평가</a>
-		</button>
+		<!--마이페이지 탭-->
+
+		<a href="my.jsp" style="color: green;"><button type="button"
+				class="btn btn-light">내 정보 보기</button></a> <a href="myUpdate.jsp"
+			style="color: green"><button type="button" class="btn btn-light">내
+				정보 수정</button></a> <a href="myDelete.jsp" style="color: green"><button
+				type="button" class="btn btn-light">회원 탈퇴</button></a> <a
+			href="questionPage.jsp" style="color: green"><button
+				type="button" class="btn btn-light">이용자 만족도 평가</button></a>
+
 		<hr>
 
 		<br> <br>
 		<%
 			for (int i = 0; i < 1; i++) {
-				if (dto2 != null ) {
+				if (dto2 != null) {
 		%>
-		 <div class="resa">
+		<div class="resa">
 			<h1>예약정보</h1>
 			<table class="table table-striped">
 				<tr>
@@ -171,17 +166,17 @@
 			<%
 				} else {
 			%>
-			<table>
+			<table style="text-align: center;">
 				<tr>
-					<td>예약 정보가 없습니다.]</td>
+					<td>예약 정보가 없습니다.</td>
 				</tr>
 			</table>
 			<%
 				}
 				}
 			%>
-		</div> 
-		
+		</div>
+
 	</div>
 	<!-- 챗봇 -->
 	<script>

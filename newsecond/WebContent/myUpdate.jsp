@@ -127,18 +127,19 @@
 	<br>
 
 	<!--마이페이지 탭-->
-	<button type="button" class="btn btn-light">
-		<a href="my.jsp" style="color: green;">내 정보 보기</a>
-	</button>
-	<button type="button" class="btn btn-light">
-		<a href="myUpdate.jsp" style="color: green">내 정보 수정</a>
-	</button>
-	<button type="button" class="btn btn-light">
-		<a href="myDelete.jsp" style="color: green">회원 탈퇴</a>
-	</button>
-	<button type="button" class="btn btn-light">
-		<a href="questionPage.jsp" style="color: green">이용자 만족도 평가</a>
-	</button>
+
+	<a href="my.jsp" style="color: green;"><button type="button"
+			class="btn btn-light">내 정보 보기</button></a>
+
+	<a href="myUpdate.jsp" style="color: green"><button type="button"
+			class="btn btn-light">내 정보 수정</button></a>
+
+	<a href="myDelete.jsp" style="color: green"><button type="button"
+			class="btn btn-light">회원 탈퇴</button></a>
+
+	<a href="questionPage.jsp" style="color: green"><button
+			type="button" class="btn btn-light">이용자 만족도 평가</button></a>
+
 
 
 	<!-- ���� ������ ���� -->

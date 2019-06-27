@@ -13,7 +13,7 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 </head>
 <body>
-<a href="homemain.jsp"><img src="img/logo.jpeg"
+	<a href="homemain.jsp"><img src="img/logo.jpeg"
 		style="width: 300px; height: 150px; text-align: center; display: block; margin: 0px auto;"></a>
 	<!-- 상단 메뉴바 -->
 	<div id="top">
@@ -67,25 +67,27 @@
 		%>
 	</nav>
 
-<button type="button" class="btn btn-light">
-			<a href="my.jsp" style="color: green;">내 정보 보기</a>
-		</button>
-		<button type="button" class="btn btn-light">
-			<a href="myUpdate.jsp" style="color: green">내 정보 수정</a>
-		</button>
-		<button type="button" class="btn btn-light">
-			<a href="myDelete.jsp" style="color: green">회원 탈퇴</a>
-		</button>
-		<button type="button" class="btn btn-light">
-			<a href="questionPage.jsp" style="color: green">이용자 만족도 평가</a>
-		</button>
+	<!--마이페이지 탭-->
+
+	<a href="my.jsp" style="color: green;"><button type="button"
+			class="btn btn-light">내 정보 보기</button></a>
+
+	<a href="myUpdate.jsp" style="color: green"><button type="button"
+			class="btn btn-light">내 정보 수정</button></a>
+
+	<a href="myDelete.jsp" style="color: green"><button type="button"
+			class="btn btn-light">회원 탈퇴</button></a>
+
+	<a href="questionPage.jsp" style="color: green"><button
+			type="button" class="btn btn-light">이용자 만족도 평가</button></a>
+
 
 	<!-- 메인 컨텐츠 -->
 	<center>
 		<H1>정말 삭제하시겠습니까?</H1>
 		<h2>삭제를 원하시면 이름과 비밀번호를 입력해주세요</h2>
 		<form action="memberDBDelete.jsp">
-			이름 : <input type="text" name="name" id="name"> <br> 
+			이름 : <input type="text" name="name" id="name"> <br>
 			비밀번호: <input type="text" name="pw" id="pw"><br> <input
 				type="submit" value="회원 탈퇴">
 		</form>
