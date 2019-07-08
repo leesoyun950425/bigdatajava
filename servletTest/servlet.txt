@@ -1,0 +1,20 @@
+servlet
+서블릿 : 
+- 서버에서 돌아가는 작은 프로그램
+- 웹프로그램을 하기 위한 라이브러리의 묶음.
+- HttpServletRequest
+  HttpServletResponse
+  PrintWriter
+
+스프링에서의 설정 방법
+- xml문서로 설정
+- annotation(@) 설정
+
+클라우드 서비스 (인스턴스, instance)
+-------------------
+- 단순한 저장소 임대
+- 운영체제가 설치된 컴퓨터 임대
+- dbms를 임대
+
+구글 GCP, 아마존 AWS, MS AZURE
+ 네이버 클라우드
