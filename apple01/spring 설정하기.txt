@@ -1,0 +1,17 @@
+Spring 셋팅
+1. pom.xml -> java-version 1.8로 -> org.springframework 5.0.4로 -> mvn 으로가서 mysql dependency를 
+ </dependencies>위에 복사
+2. java버전 프로젝트 누르고 properties에서 maven밑에 project Facets 에서 JAVA 1.8버전으로 바꾼후 런타임에서
+Tomcat체크하고 Apply
+
+1. spring프로젝트 생성 후, 설정 순서.
+ 1) pom.xml	
+  -> java-version 1.8로 org.springframewoik 5.0.4로 mvn으로 가서 mysql dependency를</dependencies> 위에복사
+ 2)project facets
+ -> java 1.8버전으로 바꾼후 runtime에서 Tomcat체크하하고 Apply
+
+2. mvc2모델의 작동 방식 클라이언트가 요청하는 페이지 위치, 컨트롤러의 위치, 서버가 결과를 담을 페이지 위치
+ -> 요청하는 곳 => webapp 아래의 jsp
+     컨트롤러의 위치 => com.itbank.mvc01 packege아래의 class자바 파일
+     서버의 결과를 담을 페이지 위치 => WEB-INF 에서 views안에 jsp파일
+3. 컨트롤러의 작동 방식
