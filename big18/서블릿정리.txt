@@ -1,0 +1,31 @@
+1. tomcat이 웹앱에서 제일 먼저 읽는 설정 파일 이름은?
+ - web.xml
+
+2. context란?
+ 프로젝트 폴더 하위, web app
+
+3. context path변경 방법은?
+ - server.xml에서 path변경
+
+4. 웹앱 설정 방법 2가지는? 
+ - servlet 파일에서 어노테이션, web.xml에서 servlet
+
+5. 서블릿의 생명 주기
+ - 기본생성자-> init() ->service()->doGet/doPost()->destory()
+
+6. 서블릿의 멤버 변수 초기화 방법
+ - web.xml파일에서 서블릿 생성 시 값을 지정 후.
+    init()메소드 호출 시 초기화
+
+7. 서블릿을 get요청 했을 때 동작 방식
+ - service()-> doGet()메소드 호출
+
+8. JSP와 서블릿의 관계
+ - jsp : html에서 자바코드를 사용 해서 동적인 처리를 담당한다. jsp엔진(컨테이너)에서 서블릿으로 변환해서 실행.
+
+9. 클라이언트의 요청 방식 2가지, 차이점
+ - get : url노출
+ - post : 숨김
+
+10. 서블릿 생성후, 설정하는 것 2가지
+ - 서블릿 경로, url
