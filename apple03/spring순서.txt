@@ -1,0 +1,10 @@
+클라이언트 --> web-server --> was --> front-controller --> controller의 해당메소드 호출 --> 
+서버쪽 처리 결과를 담을 jsp페이지 호출 --> 실행결과를 다시 web-server에게 넘김 --> 클라이언트 응답 
+
+POM.xml - 프로젝트 버전 관리, 라이브러리 관리
+web.xml - tomcat이 맨 먼저 읽는 설정 파일, 파라메터 설정, listener설정, 
+	front-controller설정 (servlet이름, url매핑,파라메터 설정)
+root-context.xml - 객체 생성 설정(싱글톤) <-> 프로토타입 ----> 디자인 패턴(설계기법)
+servlet-context.xml - front-controller세부 설정
+		(resources위치, view resolover)
+view resolover - controller에서 return받은 string뒤에 .jsp를 붙여서 front-controller에게 return.
