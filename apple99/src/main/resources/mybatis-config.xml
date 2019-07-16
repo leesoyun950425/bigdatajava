@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--DB를 총괄로 관리하는 xml, config파일 -->
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.itbank.mvc99.MemberDTO" alias="mDTO"></typeAlias> <!-- dto경로 지정 , dto호출 이름설정 -->
+		<typeAlias type="com.itbank.mvc99.BbsDTO" alias="bDTO"></typeAlias>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/memberMapper.xml"/>
+		<mapper resource="mapper/bbsMapper.xml" />
+	</mappers>
+</configuration>
+

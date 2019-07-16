@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- sql문만 테이블마다 하나씩 -->
+<mapper namespace="mDAO">
+
+	<insert id="insert" parameterType="mDTO">
+		INSERT INTO member 
+		VALUES(#{id},#{pw},#{name},#{tel})
+	</insert>
+
+</mapper>
