@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- <bean id="car" class="com.itbank.mvc09.SportsCar">
+	<constructor-arg ref="window"></constructor-arg> 생성자 호출 (파라메터O), 파라메터값 넣을때는 순서대로
+	<constructor-arg value="빨강"></constructor-arg> ref:주소값 참조, value:값 참조 
+	<constructor-arg value="300"></constructor-arg>
+</bean> -->
+<!-- <bean id="car" class="com.itbank.mvc09.SportsCar">
+	<property name="window" ref="window"></property>  set메소드 호출
+	<property name="color" value="파랑"></property>
+	<property name="speed" value="200"></property>
+</bean>
+<bean id="window" class="com.itbank.mvc09.StrongWindow"></bean> -->
+
+<bean id="car" class="com.itbank.mvc09.SportsCar">
+	<constructor-arg ref="window"></constructor-arg>
+	<constructor-arg value="빨강"></constructor-arg>
+	<constructor-arg value="100"></constructor-arg>
+	<constructor-arg ref="door"></constructor-arg>
+</bean>
+<bean id="window" class="com.itbank.mvc09.AutoWindow"></bean>
+<bean id="door" class="com.itbank.mvc09.SkyDoor"></bean>
+
+<bean id="car2" class="com.itbank.mvc09.SuperCar">
+	<property name="window" ref="window2"></property>
+	<property name="door" ref="door2"></property>
+</bean>
+<bean id="window2" class="com.itbank.mvc09.StrongWindow"></bean>
+<bean id="door2" class="com.itbank.mvc09.GeneralDoor"></bean>
+</beans>
