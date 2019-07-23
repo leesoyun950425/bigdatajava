@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mDAO">
+
+<!-- mDTO는 mybatis-config.xml의 typeAliases값 -->
+<!-- el중 #{}은 연결된 실행문이 먼저 실행준비 값이 들어오면 실행문부터 실행, ${}은 값이 먼저 실행-->
+	<select id="select" parameterType="mDTO" resultMap="rsMap">
+		SELECT* FROM member
+		WHERE id = #{id}
+	</select>
+
+	<resultMap type="mDTO" id="rsMap"> <!-- rs객체 -->
+		<result property="id" column="id" /> <!-- property : dto변수  , colume: DB내의 컬럼명 -->
+		<result property="pw" column="pw" /> <!-- set해준다. -->
+		<result property="name" column="name" />
+		<result property="tel" column="tel" />
+	</resultMap>
+
+	<select id="selectAll" resultMap="rsMap">
+		SELECT * FROM member
+	</select>
+
+	<insert id="insert" parameterType="mDTO">
+		INSERT INTO member 
+		VALUES(#{id},#{pw},#{name},#{tel}) <!-- get메소드 호출 mDTO.getId... -->
+	</insert>
+
+	<update id="update" parameterType="mDTO">
+		UPDATE member
+		SET
+		tel=#{tel}
+		WHERE
+		id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="mDTO">
+		DELETE FROM member WHERE
+		id = #{id}
+	</delete>
+
+</mapper>
